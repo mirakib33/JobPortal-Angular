@@ -1,0 +1,31 @@
+/* Home pagebackground img */
+.bg-img{
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .bg-img img{
+      filter: blur(3px);
+  }
+  
+  /* Centered text */
+  .bg-img .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  
+  .bg-img .title {
+      font-weight: bold;
+      font-size: 6vw;
+      color: green;
+  }
+  
+  .bg-img .slogan {
+      font-weight: bold;
+      font-size: 4vw;
+  }
+  
+  /* Home pagebackground img end */
