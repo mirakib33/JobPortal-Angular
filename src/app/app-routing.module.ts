@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './myComponents/admin/admin.component';
-import { ApplicantComponent } from './myComponents/applicant/applicant.component';
-import { HomeComponent } from './myComponents/home/home.component';
-import { LoginComponent } from './myComponents/login/login.component';
-import { SignupComponent } from './myComponents/signup/signup.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { ApplicantComponent } from './components/applicant/applicant.component';
+import { EmployerComponent } from './components/employer/employer.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,7 @@ const routes: Routes = [
   },
   {
     path : "employer",
-    component : ApplicantComponent
+    component : EmployerComponent
   },
   {
     path : "admin",
