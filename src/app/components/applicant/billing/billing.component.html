@@ -1,0 +1,309 @@
+<mat-tab-group>
+    <mat-tab label="Balance">
+         <!-- Accordion form start -->
+         <div class="container mt-3">            
+            <table class="table table-bordered text-center">
+              <thead>
+                <tr>
+                  <th>Net Income</th>
+                  <th>Withdrawn</th>
+                  <th>VAT</th>
+                  <th>Current Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>$100</td>
+                  <td>$70</td>
+                  <td>$5</td>
+                  <td>$25</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- accordion form end -->
+
+          
+        <!-- accordion form start -->
+          <div class="container mt-5">
+            <div>
+              <h3>History</h3>
+            </div>            
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Transaction ID</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>20-12-2020</td>
+                  <td>IN</td>
+                  <td>TR00338476</td>
+                  <td>$25</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- accordion form end -->
+    </mat-tab>
+
+    <mat-tab label="Payment Method">
+         <!-- accordion form start -->
+         <div class="container">
+            <form class="form-personal" action="" method="post">
+              <div class="row my-3">
+                <div class="col-lg-6 mb-3">
+                  <label for="swift-code" class="form-label">SWIFT Code</label>
+                  <input type="text" class="form-control" placeholder="SWIFT Code">
+                </div>
+              </div>
+              <div class="my-2">
+                <button type="submit" class="btn btn-primary">Find</button>
+                <button type="submit" class="btn btn-primary">Close</button>
+              </div>
+            </form>
+
+            <div>
+              <form class="form-personal" action="" method="post">
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="iban-number" class="form-label">IBAN Number</label>
+                    <input type="text" class="form-control" placeholder="IBAN Number">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="post-code" class="form-label">Post Code</label>
+                    <input type="text" class="form-control" placeholder="Post Code">
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="bank-account-type" class="form-label">Bank Account Type</label>
+                    <select class="form-select">
+                      <option selected>Select</option>
+                      <option value="1">Personal</option>
+                      <option value="2">Company</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="branch-name" class="form-label">Branch Name</label>
+                    <input type="text" class="form-control" placeholder="Branch Name">
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="branch-address" class="form-label">Branch Address</label>
+                    <input type="text" class="form-control" placeholder="Branch Address">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="date-of-birth" class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" placeholder="Date of Birth">
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="first-name" class="form-label">First Name</label>
+                    <input type="text" class="form-control" placeholder="First Name">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="last-name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Last Name">
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="account-name" class="form-label">Account Name</label>
+                    <input type="text" class="form-control" placeholder="Account Name">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" placeholder="Address">
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="account-name" class="form-label">Account Name</label>
+                    <input type="text" class="form-control" placeholder="Account Name">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" placeholder="Address">
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="Country" class="form-label">Country</label>
+                    <input type="text" class="form-control" placeholder="Country">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="city" class="form-label">City & State/Province</label>
+                    <input type="text" class="form-control" placeholder="City & State/Province">
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="phone-number" class="form-label">Phone Number</label>
+                    <input type="number" class="form-control" placeholder="Phone Number">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="city" class="form-label">City & State/Province</label>
+                    <input type="text" class="form-control" placeholder="City & State/Province">
+                  </div>
+                </div>
+
+
+                <div class="my-2">
+                  <button type="submit" class="btn btn-primary">Save</button>
+                  <button type="submit" class="btn btn-primary">Close</button>
+                </div>
+              </form>
+            </div>
+
+
+            <div>
+              <form class="form-personal" action="" method="post">
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="card-number" class="form-label">Card Numbers</label>
+                    <input type="number" class="form-control" placeholder="Card Numbers">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="account-name" class="form-label">Account Name</label>
+                    <input type="text" class="form-control" placeholder="Account Name">
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="CCV" class="form-label">CCV</label>
+                    <input type="number" class="form-control" placeholder="CCV">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="expiration-date" class="form-label">Expiration Date</label>
+                    <input type="date" class="form-control" placeholder="Expiration Date">
+                  </div>
+                </div>
+                <div class="my-2">
+                  <button type="submit" class="btn btn-primary">Save</button>
+                  <button type="submit" class="btn btn-primary">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- accordion form end --> 
+    </mat-tab>
+
+    <!-- <mat-tab label="Languages">
+         accordion form start
+         <div class="container">
+            <div>
+              <form class="form-personal" action="" method="post">
+                <div class="row my-1">
+                  <div class="col-lg-6 mb-3">
+                    <label for="language" class="form-label">Language</label>
+                    <input type="text" class="form-control" placeholder="Language">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="institute" class="form-label">Reading</label>
+                    <select class="form-select">
+                      <option selected>Select</option>
+                      <option value="1">High</option>
+                      <option value="2">Medium</option>
+                      <option value="3">Low</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="writing" class="form-label">Writing</label>
+                    <select class="form-select">
+                      <option selected>Select</option>
+                      <option value="1">High</option>
+                      <option value="2">Medium</option>
+                      <option value="3">Low</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="speaking" class="form-label">Speaking</label>
+                    <select class="form-select">
+                      <option selected>Select</option>
+                      <option value="1">High</option>
+                      <option value="2">Medium</option>
+                      <option value="3">Low</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="my-2">
+                  <button type="submit" class="btn btn-primary">Save</button>
+                  <button type="submit" class="btn btn-primary">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          accordion form end 
+    </mat-tab>
+
+    <mat-tab label="References">
+        accordion form start
+        <div class="container">
+            <div>
+              <form class="form-personal" action="" method="post">
+                <div class="row my-1">
+                  <div class="col-lg-6 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Name">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="designation" class="form-label">Designation</label>
+                    <input type="text" class="form-control" placeholder="Designation">
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="organization" class="form-label">Organization</label>
+                    <input type="text" class="form-control" placeholder="Organization">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="relation" class="form-label">Relation</label>
+                    <select class="form-select">
+                      <option selected>Select</option>
+                      <option value="1">Academic</option>
+                      <option value="2">Professional</option>
+                      <option value="3">Relative</option>
+                      <option value="4">Family</option>
+                      <option value="4">Others</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="col-lg-6 mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="number" class="form-control" placeholder="Phone">
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div class="">
+                    <label for="email" class="form-label">Address</label>
+                    <textarea type="text" class="form-control" placeholder="Full Address"></textarea>
+                  </div>
+                </div>
+
+                <div class="my-2">
+                  <button type="submit" class="btn btn-primary">Save</button>
+                  <button type="submit" class="btn btn-primary">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          accordion form end 
+   </mat-tab> -->
+  </mat-tab-group>

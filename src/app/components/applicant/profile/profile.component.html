@@ -1,0 +1,198 @@
+<mat-tab-group>
+  <mat-tab label="Account Info">
+
+     <!-- Accordion form start -->
+<div class="container">
+  <div class="">
+      <form class="form-employment">
+          <div class="row my-3">
+              <div class="">
+                  <label for="photo" class="form-label">Upload Photo</label>
+                  <input type="file" class="form-control" id="photo">
+              </div>  
+          </div>
+          <div class="row my-1">
+            <div class="col-lg-6 mb-3">
+              <label for="first-name" class="form-label">First Name</label>
+              <input type="text" class="form-control" placeholder="First name" id="first_name">
+            </div>
+            <div class="col-lg-6">
+              <label for="last-name" class="form-label">Last Name</label>
+              <input type="text" class="form-control" placeholder="Last name" id="last_name">
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col-lg-6 mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" placeholder="Email" id="email">
+            </div>
+            <div class="col-lg-6">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="number" class="form-control" placeholder="Phone" id="phone">
+            </div>
+          </div>
+          
+          <div class="mt-2">
+              <button type="submit" class="btn btn-primary" id="btn_save1">Save</button>
+              <button type="submit" class="btn btn-primary">Close</button>
+          </div>
+      </form>
+      <div class="my-3">
+        <form class="form-password" action="" method="post">
+          <div class="row my-3">
+            <div class="mb-3">
+              <label for="old-password" class="form-label">Old Password</label>
+              <input type="password" class="form-control" placeholder="Old Password">
+            </div>
+            <div class="mb-3">
+              <label for="new-password" class="form-label">New Password</label>
+              <input type="password" class="form-control" placeholder="New Password">
+            </div>
+            <div class="mb-3">
+              <label for="confirm-password" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" placeholder="Confirm Password">
+            </div>
+          </div>
+          
+          <div class="mt-2">
+              <button type="submit" class="btn btn-primary">Update</button>
+              <button type="submit" class="btn btn-primary">Close</button>
+          </div>
+      </form>
+      </div>
+  </div>
+</div>
+<!-- accordion form end -->
+
+</mat-tab>
+
+<mat-tab label="Personal Details">
+  
+  <!-- accordion form start -->
+  <div class="container">
+    <div>
+      <form class="form-personal">
+        <div class="row my-3">
+          <div class="col-lg-6 mb-3">
+            <label for="date" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" placeholder="Date of Birth" id="date_of_birth">
+          </div>
+          <div class="col-lg-6">
+            <label for="gender" class="form-label">Gender</label>
+            <select class="form-select" id="gender">
+              <option selected disabled>Select</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+              <option value="3">Others</option>
+            </select>
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col-lg-6 mb-3">
+            <label for="maritalStatus" class="form-label">Marital Status</label>
+            <select class="form-select" id="marital_status">
+              <option selected disabled>Select</option>
+              <option value="1">Married</option>
+              <option value="2">Unmarried</option>
+              <option value="3">Divorced</option>
+            </select>
+          </div>
+          <div class="col-lg-6">
+            <label for="religion" class="form-label">Religion</label>
+            <select class="form-select" id="religion">
+              <option selected disabled>Select</option>
+              <option value="1">Islam</option>
+              <option value="2">Hinduism</option>
+              <option value="3">Christinity</option>
+              <option value="4">Buddhism</option>
+              <option value="5">Others</option>
+            </select>
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col-lg-6 mb-3">
+            <label for="nationality" class="form-label">Nationality</label>
+            <select class="form-select" id="nationality">
+              <option selected disabled>Select</option>
+              <option value="1">Bangladeshi</option>
+              <option value="2">Others</option>
+            </select>
+          </div>
+          <div class="col-lg-6">
+            <label for="nationalId" class="form-label">National ID</label>
+            <input type="number" class="form-control" placeholder="National ID" id="national_id">
+          </div>
+        </div>
+        <div class="my-2">
+          <button type="submit" class="btn btn-primary" id="btn_save2">Save</button>
+          <button type="submit" class="btn btn-primary">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- accordion form end -->
+  
+</mat-tab>
+
+<mat-tab label="Address Details">
+  
+  <!-- accordion form start -->
+  <div class="container">
+    <div>
+      <h6>Present Address</h6>
+      <form class="form-address">
+        <div class="row my-1">
+          <div class="col-lg-6 mb-3">
+            <label for="pre-district" class="form-label">District</label>
+            <input type="text" class="form-control" placeholder="District" id="pre_district">
+          </div>
+          <div class="col-lg-6">
+            <label for="pre-upazila" class="form-label">Upazila</label>
+            <input type="text" class="form-control" placeholder="Upazila" id="pre_upazila">
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col-lg-6 mb-3">
+            <label for="pre-post-office" class="form-label">Post Office</label>
+            <input type="text" class="form-control" placeholder="Post Office" id="pre_post_office">
+          </div>
+          <div class="col-lg-6">
+            <label for="pre-village" class="form-label">Village/Area</label>
+            <input type="text" class="form-control" placeholder="Village/Area" id="pre_village">
+          </div>
+        </div>
+        <h6>Permanent Address</h6>
+        <div class="row my-3">
+          <div class="col-lg-6 mb-3">
+            <label for="per-district" class="form-label">District</label>
+            <input type="text" class="form-control" placeholder="District" id="per_district">
+          </div>
+          <div class="col-lg-6">
+            <label for="per-upazila" class="form-label">Upazila</label>
+            <input type="text" class="form-control" placeholder="Upazila" id="per_upazila">
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col-lg-6 mb-3">
+            <label for="per-post-office" class="form-label">Post Office</label>
+            <input type="text" class="form-control" placeholder="Post Office" id="per_post_office">
+          </div>
+          <div class="col-lg-6">
+            <label for="per-village" class="form-label">Village/Area</label>
+            <input type="text" class="form-control" placeholder="Village/Area" id="per_village">
+          </div>
+        </div>
+        <div class="my-2">
+          <button type="submit" class="btn btn-primary" id="btn_save3">Save</button>
+          <button type="submit" class="btn btn-primary">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- accordion form end -->
+
+</mat-tab>
+
+</mat-tab-group>
