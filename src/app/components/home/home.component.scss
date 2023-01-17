@@ -29,3 +29,13 @@
   }
   
   /* Home pagebackground img end */
+
+    .card {
+    background-color: rgb(187, 187, 193);
+    }
+
+   .card:hover {
+    color:aqua;
+    background-color: black;
+    font-size: 50px;
+   }

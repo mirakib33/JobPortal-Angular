@@ -10,10 +10,10 @@
     </button>
     
     <a routerLink="/"><p>JOB PORTAL</p></a>
-
-    <button mat-button class="menu-button justify-content-end" routerLink="/applicant/account">
-        <mat-icon>person</mat-icon>
-        <span>Profile</span>
+    
+    <button mat-button class="menu-button justify-content-end" routerLink="/">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
     </button>
   </mat-toolbar>
   
@@ -33,34 +33,48 @@
         <i class='bi bi-grid'></i>
         <span>Dashboard</span>
       </button>
-      <button mat-button class="menu-button" routerLink="/applicant/profile">
+      <button mat-button class="menu-button" routerLink="/employer/profile">
         <i class='bi bi-person'></i>
         <span>Profile</span>
       </button>
-      <button mat-button class="menu-button" routerLink="/applicant/education">
+      
+      <button mat-button class="menu-button collapsed" data-bs-target="#job-nav" data-bs-toggle="collapse" routerLink="/employer/education">
         <i class='bi bi-clipboard-check'></i>
         <span>Posted Jobs</span>
+        <i class="bi bi-chevron-down"></i>
       </button>
-      <button mat-button class="menu-button" routerLink="/applicant/employment">
+      <ul id="job-nav" class="nav-content collapse">
+        <li>
+          <button mat-button class="list-button">
+            <i class="bi bi-arrow-right"></i><span>General Tables</span>
+          </button>
+        </li>
+        <li>
+          <button mat-button class="list-button">
+            <i class="bi bi-arrow-right"></i><span>Data Tables</span>
+          </button>
+        </li>
+      </ul>
+      <button mat-button class="menu-button" routerLink="/employer/employment">
         <i class='bi bi-envelope-check'></i>
         <span>CV Bank</span>
       </button>
-      <button mat-button class="menu-button" routerLink="/applicant/others">
+      <button mat-button class="menu-button" routerLink="/employer/others">
         <i class='bi bi-border-style nav_icon'></i>
         <span>Others</span>
       </button>
-      <button mat-button class="menu-button" routerLink="/applicant/billing">
+      <button mat-button class="menu-button" routerLink="/employer/billing">
         <i class='bi bi-coin'></i>
         <span>Billing</span>
       </button>
-      <button mat-button class="menu-button" routerLink="/profile">
+      <button mat-button class="menu-button" routerLink="/employer">
         <i class='bi bi-box-arrow-in-down-left'></i>
         <span>Post A Job</span>
       </button>
   
       <mat-divider></mat-divider>
   
-      <button mat-button class="menu-button" routerLink="/help">
+      <button mat-button class="menu-button" routerLink="/">
         <i class='bi bi-box-arrow-right'></i>
         <span>Sign Out</span>
       </button>

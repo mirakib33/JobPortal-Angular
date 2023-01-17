@@ -1,14 +1,14 @@
 mat-toolbar {
-    background: #004a9f;
+    background: #198754;
     color: white;
   }
   
   mat-sidenav {
     margin: 16px;
-    width: 200px;
+    width: 250px;
     border-right: none;
-    background: #002b5c;
-    color: white;
+    background: #198754;
+    color: rgb(134, 134, 134);
     border-radius: 10px;
     padding: 16px;
     text-align: center;
@@ -36,11 +36,11 @@ mat-toolbar {
   
     i {
       margin-right: 8px;
-      color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
     }
   
     span {
-      color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
     }
   }
   
@@ -67,4 +67,31 @@ mat-toolbar {
     margin-top: 16px;
     margin-bottom: 16px;
     background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  ul{
+    list-style-type: none;
+  }
+
+  .button mat-button .menu-button:not(.collapsed) .bi-chevron-down {
+    transform: rotate(180deg);
+  }
+
+  // .bi-chevron-down {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: flex-end;
+  // }
+
+  // .bi-chevron-down {
+  //   margin-right: 0;
+  //   transition: transform 0.2s ease-in-out;
+  // }
+
+  .list-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
   }
