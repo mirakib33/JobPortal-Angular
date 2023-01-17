@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { HeaderComponent } from './components/common/header/header.component';
 import { FooterComponent } from './components/common/footer/footer.component';
@@ -97,7 +98,8 @@ import { EmpBillingComponent } from './components/employer/emp-billing/emp-billi
     MatIconModule,
     MatDividerModule,
     MatSlideToggleModule,
-    MatTabsModule
+    MatTabsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
