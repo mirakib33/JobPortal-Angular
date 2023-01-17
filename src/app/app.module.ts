@@ -31,7 +31,6 @@ import { PersonalDetailsComponent } from './components/applicant/profile/persona
 import { AddressDetailsComponent } from './components/applicant/profile/address-details/address-details.component';
 import { AcademicSummaryComponent } from './components/applicant/education/academic-summary/academic-summary.component';
 import { ProfessionalCertificationComponent } from './components/applicant/education/professional-certification/professional-certification.component';
-import { EmploymentHistoryComponent } from './components/applicant/employment/employment-history/employment-history.component';
 import { SkillsComponent } from './components/applicant/others/skills/skills.component';
 import { PortfolioComponent } from './components/applicant/others/portfolio/portfolio.component';
 import { LanguageComponent } from './components/applicant/others/language/language.component';
@@ -48,6 +47,10 @@ import { CvBankComponent } from './components/employer/cv-bank/cv-bank.component
 import { EmpProfileComponent } from './components/employer/emp-profile/emp-profile.component';
 import { EmpOthersComponent } from './components/employer/emp-others/emp-others.component';
 import { EmpBillingComponent } from './components/employer/emp-billing/emp-billing.component';
+import { DashboardComponent } from './components/applicant/dashboard/dashboard.component';
+import { EmpDashboardComponent } from './components/employer/emp-dashboard/emp-dashboard.component';
+import { AdDashboardComponent } from './components/admin/ad-dashboard/ad-dashboard.component';
+import { ViewCvComponent } from './components/applicant/view-cv/view-cv.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,6 @@ import { EmpBillingComponent } from './components/employer/emp-billing/emp-billi
     AddressDetailsComponent,
     AcademicSummaryComponent,
     ProfessionalCertificationComponent,
-    EmploymentHistoryComponent,
     SkillsComponent,
     PortfolioComponent,
     LanguageComponent,
@@ -85,7 +87,11 @@ import { EmpBillingComponent } from './components/employer/emp-billing/emp-billi
     CvBankComponent,
     EmpProfileComponent,
     EmpOthersComponent,
-    EmpBillingComponent
+    EmpBillingComponent,
+    DashboardComponent,
+    EmpDashboardComponent,
+    AdDashboardComponent,
+    ViewCvComponent
   ],
   imports: [
     BrowserModule,

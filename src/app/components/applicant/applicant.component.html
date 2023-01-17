@@ -9,7 +9,7 @@
     <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
   </button>
   
-  <a class="navbar-brand fw-bold text-success" routerLink="/">JOB PORTAL</a>
+  <a class="navbar-brand fw-bold text-success ps-lg-4" routerLink="/">JOB PORTAL</a>
   <button class="btn btn-primary">Home</button>
 </nav>
 
@@ -25,142 +25,131 @@
 
     <mat-divider></mat-divider>
 
-    <button mat-button class="menu-button" routerLink="/home">
+    <button mat-button class="menu-button" routerLink="/applicant">
       <i class='bi bi-grid'></i>
       <span>Dashboard</span>
     </button>
     
     <!-- profile button -->
-    <button mat-button class="menu-button collapsed" data-bs-target="#profile" data-bs-toggle="collapse" routerLink="/employer/education">
+    <button mat-button class="menu-button collapsed" data-bs-target="#profile" data-bs-toggle="collapse">
       <i class='bi bi-person'></i>
       <span>Profile</span>
       <i class="bi bi-chevron-down"></i>
     </button>
     <ul id="profile" class="nav-content collapse">
       <li>
-        <button mat-button class="list-button">
+        <button mat-button class="list-button" routerLink="/applicant/account-info">
           <i class="bi bi-arrow-right"></i>
-          <span>General Tables</span>
+          <span>Account Info</span>
         </button>
       </li>
       <li>
-        <button mat-button class="list-button">
+        <button mat-button class="list-button" routerLink="/applicant/personal-details">
           <i class="bi bi-arrow-right"></i>
-          <span>Data Tables</span>
+          <span>Personal Details</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/address-details">
+          <i class="bi bi-arrow-right"></i>
+          <span>Address Details</span>
         </button>
       </li>
     </ul>
     <!-- profile button end-->
     
-    <!-- posted job button -->
-    <button mat-button class="menu-button collapsed" data-bs-target="#posted-jobs" data-bs-toggle="collapse" routerLink="/employer/education">
-      <i class='bi bi-clipboard-check'></i>
-      <span>Posted Jobs</span>
+    <!-- Education button -->
+    <button mat-button class="menu-button collapsed" data-bs-target="#education" data-bs-toggle="collapse">
+      <i class='bi bi-mortarboard'></i>
+        <span>Education</span>
       <i class="bi bi-chevron-down"></i>
     </button>
-    <ul id="posted-jobs" class="nav-content collapse">
+    <ul id="education" class="nav-content collapse">
       <li>
-        <button mat-button class="list-button">
+        <button mat-button class="list-button" routerLink="/applicant/academic-summary">
           <i class="bi bi-arrow-right"></i>
-          <span>General Tables</span>
+          <span>Academic Summary</span>
         </button>
       </li>
       <li>
-        <button mat-button class="list-button">
+        <button mat-button class="list-button" routerLink="/applicant/other-certificates">
           <i class="bi bi-arrow-right"></i>
-          <span>Data Tables</span>
+          <span>Other Certificates</span>
         </button>
       </li>
     </ul>
-    <!-- posted job button end-->
+    <!-- Education button end-->
 
-    <!-- cv bank button -->
-    <button mat-button class="menu-button collapsed" data-bs-target="#cv-bank" data-bs-toggle="collapse" routerLink="/employer/education">
-      <i class='bi bi-envelope-check'></i>
-      <span>CV Bank</span>
-      <i class="bi bi-chevron-down"></i>
+    <!-- Employment button -->
+    <button mat-button class="menu-button" routerLink="/applicant/employment">
+      <i class='bi bi-person-workspace'></i>
+        <span>Employment</span>
     </button>
-    <ul id="cv-bank" class="nav-content collapse">
-      <li>
-        <button mat-button class="list-button">
-          <i class="bi bi-arrow-right"></i>
-          <span>General Tables</span>
-        </button>
-      </li>
-      <li>
-        <button mat-button class="list-button">
-          <i class="bi bi-arrow-right"></i>
-          <span>Data Tables</span>
-        </button>
-      </li>
-    </ul>
-    <!-- cv bank button end-->
+    <!-- Employment button end-->
 
     <!-- others button -->
-    <button mat-button class="menu-button collapsed" data-bs-target="#others" data-bs-toggle="collapse" routerLink="/employer/education">
+    <button mat-button class="menu-button collapsed" data-bs-target="#others" data-bs-toggle="collapse">
       <i class='bi bi-border-style nav_icon'></i>
       <span>Others</span>
       <i class="bi bi-chevron-down"></i>
     </button>
     <ul id="others" class="nav-content collapse">
       <li>
-        <button mat-button class="list-button">
+        <button mat-button class="list-button" routerLink="/applicant/skills">
           <i class="bi bi-arrow-right"></i>
-          <span>General Tables</span>
+          <span>Skills</span>
         </button>
       </li>
       <li>
-        <button mat-button class="list-button">
+        <button mat-button class="list-button" routerLink="/applicant/portfolio">
           <i class="bi bi-arrow-right"></i>
-          <span>Data Tables</span>
+          <span>Portfolio</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/language">
+          <i class="bi bi-arrow-right"></i>
+          <span>Language</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/references">
+          <i class="bi bi-arrow-right"></i>
+          <span>References</span>
         </button>
       </li>
     </ul>
     <!-- others button end-->
 
     <!-- billing button -->
-    <button mat-button class="menu-button collapsed" data-bs-target="#billing" data-bs-toggle="collapse" routerLink="/employer/education">
+    <button mat-button class="menu-button collapsed" data-bs-target="#billing" data-bs-toggle="collapse">
       <i class='bi bi-coin'></i>
       <span>Billing</span>
       <i class="bi bi-chevron-down"></i>
     </button>
     <ul id="billing" class="nav-content collapse">
       <li>
-        <button mat-button class="list-button">
+        <button mat-button class="list-button" routerLink="/applicant/balance">
           <i class="bi bi-arrow-right"></i>
-          <span>General Tables</span>
+          <span>Balance</span>
         </button>
       </li>
       <li>
-        <button mat-button class="list-button">
+        <button mat-button class="list-button" routerLink="/applicant/payment-method">
           <i class="bi bi-arrow-right"></i>
-          <span>Data Tables</span>
+          <span>Payment Method</span>
         </button>
       </li>
     </ul>
-    <!-- posted job button end-->
+    <!-- Billing button end-->
 
-    <!-- post a job button -->
-    <button mat-button class="menu-button collapsed" data-bs-target="#job-post" data-bs-toggle="collapse" routerLink="/employer/education">
-      <i class='bi bi-box-arrow-in-down-left'></i>
-      <span>Post A Job</span>
-      <i class="bi bi-chevron-down"></i>
+    <!-- View CV button -->
+    <button mat-button class="menu-button" routerLink="/applicant/cv">
+      <i class='bi bi-eye'></i>
+        <span>View CV</span>
     </button>
-    <ul id="job-post" class="nav-content collapse">
-      <li>
-        <button mat-button class="list-button">
-          <i class="bi bi-arrow-right"></i>
-          <span>General Tables</span>
-        </button>
-      </li>
-      <li>
-        <button mat-button class="list-button">
-          <i class="bi bi-arrow-right"></i>
-          <span>Data Tables</span>
-        </button>
-      </li>
-    </ul>
-    <!-- posted job button end-->
+    
+    <!-- CV view button end-->
 
     <mat-divider></mat-divider>
 

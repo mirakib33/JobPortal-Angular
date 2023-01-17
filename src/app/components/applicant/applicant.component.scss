@@ -1,8 +1,3 @@
-mat-toolbar {
-  background: #ffffff;
-  color: white;
-  box-shadow: none;
-}
 
 mat-sidenav {
   margin: 16px;
@@ -13,7 +8,6 @@ mat-sidenav {
   border-radius: 10px;
   padding: 16px;
   text-align: center;
-  box-shadow: none;
 }
 
 .content {
@@ -69,13 +63,13 @@ mat-sidenav-container {
 .name {
   margin-top: 10px;
   font-weight: normal;
-  color: #198754
+  color: #198754;
 }
 
 .designation {
   margin-top: 2px;
   font-size: 0.7rem;
-  color: #198754
+  color: #198754;
 }
 
 // mat-divider {
@@ -108,5 +102,28 @@ ul{
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 1rem;
+  font-size: 12px;
+
+  i {
+    margin-right: 8px;
+    color: #198754;
+  }
+
+  span {
+    color: #198754;
+  }
+
+}
+
+.list-button:hover {
+  background-color: #198754;
+
+  i {
+    color: #ffffff;
+  }
+
+  span {
+    color: #ffffff;
+  }
+
 }
