@@ -51,6 +51,7 @@ import { DashboardComponent } from './components/applicant/dashboard/dashboard.c
 import { EmpDashboardComponent } from './components/employer/emp-dashboard/emp-dashboard.component';
 import { AdDashboardComponent } from './components/admin/ad-dashboard/ad-dashboard.component';
 import { ViewCvComponent } from './components/applicant/view-cv/view-cv.component';
+import { JobPostComponent } from './components/employer/job-post/job-post.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { ViewCvComponent } from './components/applicant/view-cv/view-cv.componen
     DashboardComponent,
     EmpDashboardComponent,
     AdDashboardComponent,
-    ViewCvComponent
+    ViewCvComponent,
+    JobPostComponent
   ],
   imports: [
     BrowserModule,

@@ -25,6 +25,8 @@ import { BalanceComponent } from './components/applicant/billing/balance/balance
 import { PaymentMethodComponent } from './components/applicant/billing/payment-method/payment-method.component';
 import { ProfessionalCertificationComponent } from './components/applicant/education/professional-certification/professional-certification.component';
 import { ViewCvComponent } from './components/applicant/view-cv/view-cv.component';
+import { EmpDashboardComponent } from './components/employer/emp-dashboard/emp-dashboard.component';
+import { JobPostComponent } from './components/employer/job-post/job-post.component';
 
 const routes: Routes = [
   {
@@ -107,6 +109,10 @@ const routes: Routes = [
     component : EmployerComponent,
     children: [
       {
+        path : "",
+        component : EmpDashboardComponent
+      },
+      {
         path : "profile",
         component : EmpProfileComponent
       },
@@ -127,8 +133,8 @@ const routes: Routes = [
         component : PostedJobsComponent
       },
       {
-        path : "post-a-job",
-        component : EmpProfileComponent
+        path : "job-post",
+        component : JobPostComponent
       }
     ]
   },
