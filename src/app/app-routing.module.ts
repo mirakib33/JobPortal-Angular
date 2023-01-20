@@ -39,6 +39,15 @@ import { PerJobPostComponent } from './components/employer/job-post/per-job-post
 import { FreeJobPostComponent } from './components/employer/job-post/free-job-post/free-job-post.component';
 import { EmpBalanceComponent } from './components/employer/emp-billing/emp-balance/emp-balance.component';
 import { EmpPaymentMethodComponent } from './components/employer/emp-billing/emp-payment-method/emp-payment-method.component';
+import { AdDashboardComponent } from './components/admin/ad-dashboard/ad-dashboard.component';
+import { AdAccountInfoComponent } from './components/admin/ad-profile/ad-account-info/ad-account-info.component';
+import { AdAddressDetailsComponent } from './components/admin/ad-profile/ad-address-details/ad-address-details.component';
+import { AdPersonalDetailsComponent } from './components/admin/ad-profile/ad-personal-details/ad-personal-details.component';
+import { UsersComponent } from './components/admin/users/users.component';
+import { JobCategoryComponent } from './components/admin/job-category/job-category.component';
+import { JobListComponent } from './components/admin/job-list/job-list.component';
+import { AdBalanceComponent } from './components/admin/ad-billing/ad-balance/ad-balance.component';
+import { AdPaymentMethodComponent } from './components/admin/ad-billing/ad-payment-method/ad-payment-method.component';
 
 const routes: Routes = [
   {
@@ -177,7 +186,45 @@ const routes: Routes = [
   },
   {
     path : "admin",
-    component : AdminComponent
+    component : AdminComponent,
+    children: [
+      {
+        path : "",
+        component : AdDashboardComponent
+      },
+      {
+        path : "account-info",
+        component : AdAccountInfoComponent
+      },
+      {
+        path : "address-details",
+        component : AdAddressDetailsComponent
+      },
+      {
+        path : "personal-details",
+        component : AdPersonalDetailsComponent
+      },
+      {
+        path : "users",
+        component : UsersComponent
+      },
+      {
+        path : "job-category",
+        component : JobCategoryComponent
+      },
+      {
+        path : "job-list",
+        component : JobListComponent
+      },
+      {
+        path : "balance",
+        component : AdBalanceComponent
+      },
+      {
+        path : "payment-method",
+        component : AdPaymentMethodComponent
+      }
+    ]
   }
 ];
 
