@@ -48,6 +48,7 @@ import { JobCategoryComponent } from './components/admin/job-category/job-catego
 import { JobListComponent } from './components/admin/job-list/job-list.component';
 import { AdBalanceComponent } from './components/admin/ad-billing/ad-balance/ad-balance.component';
 import { AdPaymentMethodComponent } from './components/admin/ad-billing/ad-payment-method/ad-payment-method.component';
+import { FreelanceJobComponent } from './components/job/freelance-job/freelance-job.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path : "signup",
     component : SignupComponent
+  },
+  {
+    path : "freelance-job",
+    component : FreelanceJobComponent
   },
   {
     path : "applicant",
