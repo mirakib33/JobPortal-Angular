@@ -144,11 +144,25 @@
     <!-- Billing button end-->
 
     <!-- View CV button -->
-    <button mat-button class="menu-button" routerLink="/applicant/cv">
+    <button mat-button class="menu-button collapsed" data-bs-target="#cv" data-bs-toggle="collapse">
       <i class='bi bi-eye'></i>
-        <span>View CV</span>
+      <span>View CV</span>
+      <i class="bi bi-chevron-down"></i>
     </button>
-    
+    <ul id="cv" class="nav-content collapse">
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/job-portal-cv">
+          <i class="bi bi-arrow-right"></i>
+          <span>Job Portal CV</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/personal-cv">
+          <i class="bi bi-arrow-right"></i>
+          <span>Personal CV</span>
+        </button>
+      </li>
+    </ul>
     <!-- CV view button end-->
 
     <mat-divider></mat-divider>

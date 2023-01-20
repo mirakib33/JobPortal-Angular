@@ -83,8 +83,9 @@ ul{
 }
 
 .button mat-button .menu-button:not(.collapsed) .bi-chevron-down {
-  transform: rotate(180deg);
+  transform: rotateX(180deg);
 }
+
 
 // .bi-chevron-down {
 //   display: flex;

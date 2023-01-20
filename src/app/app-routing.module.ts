@@ -24,9 +24,10 @@ import { LanguageComponent } from './components/applicant/others/language/langua
 import { BalanceComponent } from './components/applicant/billing/balance/balance.component';
 import { PaymentMethodComponent } from './components/applicant/billing/payment-method/payment-method.component';
 import { ProfessionalCertificationComponent } from './components/applicant/education/professional-certification/professional-certification.component';
-import { ViewCvComponent } from './components/applicant/view-cv/view-cv.component';
 import { EmpDashboardComponent } from './components/employer/emp-dashboard/emp-dashboard.component';
 import { JobPostComponent } from './components/employer/job-post/job-post.component';
+import { JobPortalCvComponent } from './components/applicant/view-cv/job-portal-cv/job-portal-cv.component';
+import { PersonalCvComponent } from './components/applicant/view-cv/personal-cv/personal-cv.component';
 
 const routes: Routes = [
   {
@@ -98,8 +99,12 @@ const routes: Routes = [
         component : PaymentMethodComponent
       },
       {
-        path : "cv",
-        component : ViewCvComponent
+        path : "job-portal-cv",
+        component : JobPortalCvComponent
+      },
+      {
+        path : "personal-cv",
+        component : PersonalCvComponent
       }
 
     ]
