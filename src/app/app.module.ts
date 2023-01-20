@@ -65,6 +65,16 @@ import { FreeJobPostComponent } from './components/employer/job-post/free-job-po
 import { PerPostedJobsComponent } from './components/employer/posted-jobs/per-posted-jobs/per-posted-jobs.component';
 import { FreePostedJobsComponent } from './components/employer/posted-jobs/free-posted-jobs/free-posted-jobs.component';
 import { EmpAccountInfoComponent } from './components/employer/emp-profile/emp-account-info/emp-account-info.component';
+import { AdProfileComponent } from './components/admin/ad-profile/ad-profile.component';
+import { AdAccountInfoComponent } from './components/admin/ad-profile/ad-account-info/ad-account-info.component';
+import { AdAddressDetailsComponent } from './components/admin/ad-profile/ad-address-details/ad-address-details.component';
+import { AdPersonalDetailsComponent } from './components/admin/ad-profile/ad-personal-details/ad-personal-details.component';
+import { AdBillingComponent } from './components/admin/ad-billing/ad-billing.component';
+import { AdBalanceComponent } from './components/admin/ad-billing/ad-balance/ad-balance.component';
+import { AdPaymentMethodComponent } from './components/admin/ad-billing/ad-payment-method/ad-payment-method.component';
+import { UsersComponent } from './components/admin/users/users.component';
+import { JobCategoryComponent } from './components/admin/job-category/job-category.component';
+import { JobListComponent } from './components/admin/job-list/job-list.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +129,17 @@ import { EmpAccountInfoComponent } from './components/employer/emp-profile/emp-a
     FreeJobPostComponent,
     PerPostedJobsComponent,
     FreePostedJobsComponent,
-    EmpAccountInfoComponent
+    EmpAccountInfoComponent,
+    AdProfileComponent,
+    AdAccountInfoComponent,
+    AdAddressDetailsComponent,
+    AdPersonalDetailsComponent,
+    AdBillingComponent,
+    AdBalanceComponent,
+    AdPaymentMethodComponent,
+    UsersComponent,
+    JobCategoryComponent,
+    JobListComponent
   ],
   imports: [
     BrowserModule,
