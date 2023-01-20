@@ -28,6 +28,17 @@ import { EmpDashboardComponent } from './components/employer/emp-dashboard/emp-d
 import { JobPostComponent } from './components/employer/job-post/job-post.component';
 import { JobPortalCvComponent } from './components/applicant/view-cv/job-portal-cv/job-portal-cv.component';
 import { PersonalCvComponent } from './components/applicant/view-cv/personal-cv/personal-cv.component';
+import { EmpAccountInfoComponent } from './components/employer/emp-profile/emp-account-info/emp-account-info.component';
+import { EmpPersonalDetailsComponent } from './components/employer/emp-profile/emp-personal-details/emp-personal-details.component';
+import { EmpAddressDetailsComponent } from './components/employer/emp-profile/emp-address-details/emp-address-details.component';
+import { PerPostedJobsComponent } from './components/employer/posted-jobs/per-posted-jobs/per-posted-jobs.component';
+import { FreePostedJobsComponent } from './components/employer/posted-jobs/free-posted-jobs/free-posted-jobs.component';
+import { PerJobCvComponent } from './components/employer/cv-bank/per-job-cv/per-job-cv.component';
+import { FreeJobCvComponent } from './components/employer/cv-bank/free-job-cv/free-job-cv.component';
+import { PerJobPostComponent } from './components/employer/job-post/per-job-post/per-job-post.component';
+import { FreeJobPostComponent } from './components/employer/job-post/free-job-post/free-job-post.component';
+import { EmpBalanceComponent } from './components/employer/emp-billing/emp-balance/emp-balance.component';
+import { EmpPaymentMethodComponent } from './components/employer/emp-billing/emp-payment-method/emp-payment-method.component';
 
 const routes: Routes = [
   {
@@ -118,29 +129,50 @@ const routes: Routes = [
         component : EmpDashboardComponent
       },
       {
-        path : "profile",
-        component : EmpProfileComponent
+        path : "account-info",
+        component : EmpAccountInfoComponent
       },
       {
-        path : "cv-bank",
-        component : CvBankComponent
+        path : "personal-details",
+        component : EmpPersonalDetailsComponent
       },
       {
-        path : "billing",
-        component : EmpBillingComponent
+        path : "address-details",
+        component : EmpAddressDetailsComponent
       },
       {
-        path : "others",
-        component : EmpOthersComponent
+        path : "per-posted-jobs",
+        component : PerPostedJobsComponent
       },
       {
-        path : "posted-jobs",
-        component : PostedJobsComponent
+        path : "free-posted-jobs",
+        component : FreePostedJobsComponent
       },
       {
-        path : "job-post",
-        component : JobPostComponent
+        path : "per-job-cv",
+        component : PerJobCvComponent
+      },
+      {
+        path : "free-job-cv",
+        component : FreeJobCvComponent
+      },
+      {
+        path : "per-job-post",
+        component : PerJobPostComponent
+      },
+      {
+        path : "free-job-post",
+        component : FreeJobPostComponent
+      },
+      {
+        path : "balance",
+        component : EmpBalanceComponent
+      },
+      {
+        path : "payment-method",
+        component : EmpPaymentMethodComponent
       }
+      
     ]
   },
   {

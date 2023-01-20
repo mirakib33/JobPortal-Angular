@@ -54,6 +54,17 @@ import { ViewCvComponent } from './components/applicant/view-cv/view-cv.componen
 import { JobPostComponent } from './components/employer/job-post/job-post.component';
 import { JobPortalCvComponent } from './components/applicant/view-cv/job-portal-cv/job-portal-cv.component';
 import { PersonalCvComponent } from './components/applicant/view-cv/personal-cv/personal-cv.component';
+import { EmpPersonalDetailsComponent } from './components/employer/emp-profile/emp-personal-details/emp-personal-details.component';
+import { EmpAddressDetailsComponent } from './components/employer/emp-profile/emp-address-details/emp-address-details.component';
+import { PerJobCvComponent } from './components/employer/cv-bank/per-job-cv/per-job-cv.component';
+import { FreeJobCvComponent } from './components/employer/cv-bank/free-job-cv/free-job-cv.component';
+import { EmpBalanceComponent } from './components/employer/emp-billing/emp-balance/emp-balance.component';
+import { EmpPaymentMethodComponent } from './components/employer/emp-billing/emp-payment-method/emp-payment-method.component';
+import { PerJobPostComponent } from './components/employer/job-post/per-job-post/per-job-post.component';
+import { FreeJobPostComponent } from './components/employer/job-post/free-job-post/free-job-post.component';
+import { PerPostedJobsComponent } from './components/employer/posted-jobs/per-posted-jobs/per-posted-jobs.component';
+import { FreePostedJobsComponent } from './components/employer/posted-jobs/free-posted-jobs/free-posted-jobs.component';
+import { EmpAccountInfoComponent } from './components/employer/emp-profile/emp-account-info/emp-account-info.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +108,18 @@ import { PersonalCvComponent } from './components/applicant/view-cv/personal-cv/
     ViewCvComponent,
     JobPostComponent,
     JobPortalCvComponent,
-    PersonalCvComponent
+    PersonalCvComponent,
+    EmpPersonalDetailsComponent,
+    EmpAddressDetailsComponent,
+    PerJobCvComponent,
+    FreeJobCvComponent,
+    EmpBalanceComponent,
+    EmpPaymentMethodComponent,
+    PerJobPostComponent,
+    FreeJobPostComponent,
+    PerPostedJobsComponent,
+    FreePostedJobsComponent,
+    EmpAccountInfoComponent
   ],
   imports: [
     BrowserModule,
