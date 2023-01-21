@@ -75,6 +75,8 @@ import { AdPaymentMethodComponent } from './components/admin/ad-billing/ad-payme
 import { UsersComponent } from './components/admin/users/users.component';
 import { JobCategoryComponent } from './components/admin/job-category/job-category.component';
 import { JobListComponent } from './components/admin/job-list/job-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -145,6 +147,9 @@ import { JobListComponent } from './components/admin/job-list/job-list.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
 
     MatToolbarModule,
     MatSidenavModule,
