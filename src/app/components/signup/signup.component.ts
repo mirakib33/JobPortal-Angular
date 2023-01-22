@@ -1,6 +1,6 @@
 import { Component, } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { SignupService } from 'src/app/services/signup/signup.service';
+import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -30,7 +30,7 @@ export class SignupComponent{
   //   });
   // }
 
-  add(){
-    this.signupService.save(this.addForm.value);
-  }
+  // add(){
+  //   this.signupService.save(this.addForm.value);
+  // }
 }
