@@ -25,8 +25,8 @@ export class SignupComponent{
   //     userType:[''],
   //   });
 
-  //   this.signupService.getSignup().subscribe((data:Trainee[]) => {
-  //     this.trainee = data;
+  //   this.signupService.getSignup().subscribe((data:Signup[]) => {
+  //     this.signup = data;
   //   });
   // }
 
