@@ -1,41 +1,41 @@
 <!-- Accordion form start -->
 <div class="container">
     <div class="">
-        <form class="form-employment">
+        <form [formGroup]="form" (ngSubmit)="submit()" class="account-info">
             <div class="row my-3">
                 <div class="">
                     <label for="photo" class="form-label">Upload Photo</label>
-                    <input type="file" class="form-control" id="photo">
+                    <input type="file" class="form-control" id="photo" formControlName="photo">
                 </div>  
             </div>
             <div class="row my-1">
               <div class="col-lg-6 mb-3">
                 <label for="first-name" class="form-label">First Name</label>
-                <input type="text" class="form-control" placeholder="First name" id="first_name">
+                <input type="text" class="form-control" placeholder="First name" id="first_name" formControlName="firstName">
               </div>
               <div class="col-lg-6">
                 <label for="last-name" class="form-label">Last Name</label>
-                <input type="text" class="form-control" placeholder="Last name" id="last_name">
+                <input type="text" class="form-control" placeholder="Last name" id="last_name" formControlName="lastName">
               </div>
             </div>
             <div class="row my-3">
               <div class="col-lg-6 mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" placeholder="Email" id="email">
+                <input type="text" class="form-control" placeholder="Email" id="email" formControlName="email">
               </div>
               <div class="col-lg-6">
                 <label for="phone" class="form-label">Phone</label>
-                <input type="number" class="form-control" placeholder="Phone" id="phone">
+                <input type="number" class="form-control" placeholder="Phone" id="phone" formControlName="phone">
               </div>
             </div>
             
             <div class="mt-2">
-                <button type="submit" class="btn btn-primary" id="btn_save1">Save</button>
+                <button type="submit" class="btn btn-primary me-3" id="btn_save">Save</button>
                 <button type="submit" class="btn btn-primary">Close</button>
             </div>
         </form>
         <div class="my-3">
-          <form class="form-password" action="" method="post">
+          <form [formGroup]="form" (ngSubmit)="submit()" class="form-password" action="" method="post">
             <div class="row my-3">
               <div class="mb-3">
                 <label for="old-password" class="form-label">Old Password</label>
@@ -47,12 +47,12 @@
               </div>
               <div class="mb-3">
                 <label for="confirm-password" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" placeholder="Confirm Password">
+                <input type="password" class="form-control" placeholder="Confirm Password" formControlName="password">
               </div>
             </div>
             
             <div class="mt-2">
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-primary me-3">Save</button>
                 <button type="submit" class="btn btn-primary">Close</button>
             </div>
         </form>

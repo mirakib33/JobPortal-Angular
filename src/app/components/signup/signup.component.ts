@@ -1,5 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
@@ -9,10 +10,9 @@ import { SignupService } from 'src/app/services/signup.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private signupService:SignupService) { }
+  constructor(private signupService:SignupService, private router: Router) { }
 
   form!: FormGroup;
-  // signup!:Signup[];
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -22,12 +22,14 @@ export class SignupComponent implements OnInit {
       phone: new FormControl(''),
       password: new FormControl(''),
       userType: new FormControl(''),
+      userAgreement: new FormControl('')
     });
 
   }
 
   submit(){
     this.signupService.save(this.form.value).subscribe((res:any) => {
+      this.router.navigateByUrl('/signup');
     })
   }
 }
