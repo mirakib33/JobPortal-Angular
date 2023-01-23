@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="d-flex">
-		<form [formGroup]="addForm!" class="form-signup">
+		<form [formGroup]="form" (ngSubmit)="submit()" class="form-signup">
 			<div class="card-title">
 				<h3 class="text-center">Sign Up to Job Portal</h3>
 			</div>
@@ -10,23 +10,23 @@
 						type="text" class="form-control" placeholder="First name" required id="first_name">
 				</div>
 				<div class="col-lg-6">
-					<label for="lastName" class="form-label">Last Name</label> <input formControlName="name"
+					<label for="lastName" class="form-label">Last Name</label> <input formControlName="lastName"
 						type="text" class="form-control" placeholder="Last name" required id="last_name">
 				</div>
 			</div>
 			<div class="row my-3">
 				<div class="col-lg-6 mb-3">
-					<label for="email" class="form-label">Email</label> <input formControlName="name"
+					<label for="email" class="form-label">Email</label> <input formControlName="email"
 						type="text" class="form-control" placeholder="Email" required id="email">
 				</div>
 				<div class="col-lg-6">
-					<label for="phone" class="form-label">Phone</label> <input formControlName="name"
+					<label for="phone" class="form-label">Phone</label> <input formControlName="phone"
 						type="number" class="form-control" placeholder="Phone" required id="phone">
 				</div>
 			</div>
 			<div class="row my-3">
 				<div class="col-lg-6 mb-3">
-					<label for="password" class="form-label">Password</label> <input formControlName="name"
+					<label for="password" class="form-label">Password</label> <input formControlName="password"
 						type="password" class="form-control" placeholder="Password" required id="password">
 				</div>
 				<div class="col-lg-6">
@@ -56,7 +56,7 @@
 				</label>
 			</div>
 			<div>
-				<button [disabled]="addForm!.valid" type="submit" class="btn btn-primary w-100" id="btn_create">Create
+				<button [disabled]="!form.valid" type="submit" class="btn btn-primary w-100" id="btn_create">Create
 					Account</button>
 			</div>
 			<div class="mt-5 text-center">

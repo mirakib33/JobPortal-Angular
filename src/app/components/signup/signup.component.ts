@@ -1,4 +1,4 @@
-import { Component, } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { SignupService } from 'src/app/services/signup.service';
 
@@ -7,16 +7,18 @@ import { SignupService } from 'src/app/services/signup.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent{
+export class SignupComponent {
 
   constructor(private signupService:SignupService) { }
 
-  addForm!: FormGroup;
-  // signup:Signup[];
+  form!: FormGroup;
+  // signup!:Signup[];
 
-  // ngOnInit() {
-  //   this.addForm = this.formBuilder.group({
-  //     id:[''],
+  // ngOnInit(): void {
+  //   this.form = new FormGroup({
+  //     title: new FormControl('', [Validators.required]),
+  //     body: new FormControl('', Validators.required)
+  //     ,
   //     firstName:[''],
   //     lastName:[''],
   //     email:[''],
@@ -30,7 +32,9 @@ export class SignupComponent{
   //   });
   // }
 
-  // add(){
-  //   this.signupService.save(this.addForm.value);
-  // }
+  submit(){
+    this.signupService.save(this.form.value).subscribe((res:any) => {
+      console.log('Post created successfully!');
+    })
+  }
 }
