@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { AccountInfo } from '../models/account-info.model';
+import { AccountInfo } from 'src/app/models/applicant/account-info.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class AccountInfoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private url = "http://localhost:8080/applicant";
+  private url = "http://localhost:8080";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,7 +20,7 @@ export class AccountInfoService {
 
   save(accountInfo: AccountInfo): Observable<any> {
   
-    return this.httpClient.post(this.url + '/account-info', JSON.stringify(accountInfo), this.httpOptions)
+    return this.httpClient.post(this.url + '/signup', JSON.stringify(accountInfo), this.httpOptions)
   
     .pipe(
       catchError(this.errorHandler)
@@ -36,5 +36,4 @@ export class AccountInfoService {
     }
     return throwError(errorMessage);
  }
-
 }

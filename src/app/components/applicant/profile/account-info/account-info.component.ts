@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { AccountInfoService } from 'src/app/services/account-info.service';
+import { AccountInfoService } from 'src/app/services/applicant/account-info.service';
 
 @Component({
   selector: 'app-account-info',
