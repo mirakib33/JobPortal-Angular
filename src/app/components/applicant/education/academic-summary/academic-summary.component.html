@@ -1,6 +1,6 @@
 <!-- Academic summary view start -->
 
-<div *ngIf="data" class="container">
+<div *ngIf="dataOC" class="container">
     <div>
       <button (click)="dataClose()" class="btn btn-primary float-end edit-btn">Edit</button>
     </div><br><br>
@@ -38,7 +38,7 @@
   <!-- Academic summary view end -->
 
   <!-- accordion form start -->
-  <div *ngIf="form" class="container">
+  <div *ngIf="formOC" class="container">
     <div>
       <form class="form-academic" action="" method="post">
         <div class="row my-1">

@@ -9,6 +9,25 @@ import { AccountInfoService } from 'src/app/services/applicant/account-info.serv
 })
 export class AccountInfoComponent implements OnInit {
 
+  // show hide action
+  formSH = false;
+  dataSH = true;
+  dataClose(){
+   this.formSH = true;
+   this.dataSH = false;
+  }
+
+  formClose(){
+    this.dataSH = true;
+    this.formSH = false;
+  }
+
+  formOpen(){
+    this.formSH = true;
+  }
+
+  // show hide action
+
   constructor(private accountInfoService: AccountInfoService) { }
 
   form!: FormGroup;

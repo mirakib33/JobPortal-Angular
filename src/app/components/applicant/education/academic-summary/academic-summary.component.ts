@@ -7,20 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AcademicSummaryComponent {
 
-  form = false;
-  data = true;
+  formOC = false;
+  dataOC = true;
   dataClose(){
-   this.form = true;
-   this.data = false;
+   this.formOC = true;
+   this.dataOC = false;
   }
 
   formClose(){
-    this.data = true;
-    this.form = false;
+    this.dataOC = true;
+    this.formOC = false;
   }
 
   formOpen(){
-    this.form = true;
+    this.formOC = true;
   }
 
 }

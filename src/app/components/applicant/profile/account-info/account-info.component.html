@@ -1,6 +1,9 @@
 <!-- Accordion form start -->
 <div class="container">
-    <div class="">
+    <div>
+      <button (click)="dataClose()" class="btn btn-primary float-end edit-btn">Edit</button>
+    </div><br><br>
+    <div>
         <form [formGroup]="form" (ngSubmit)="submit()" class="account-info">
             <div class="row my-3">
                 <div class="">
@@ -33,7 +36,15 @@
                 <button type="submit" class="btn btn-primary me-3" id="btn_save">Save</button>
                 <button type="submit" class="btn btn-primary">Close</button>
             </div>
-        </form>
+        </form><br><br>
+    </div>
+</div>
+
+        <p class="ps-3 change-password">Change Password</p>
+
+        <!-- Change password form -->
+<div class="container">
+    <div>
         <div class="my-3">
           <form [formGroup]="form" (ngSubmit)="submit()" class="form-password" action="" method="post">
             <div class="row my-3">
@@ -59,4 +70,5 @@
         </div>
     </div>
 </div>
+
   <!-- accordion form end -->
