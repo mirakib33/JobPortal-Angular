@@ -10,20 +10,34 @@ import { AccountInfoService } from 'src/app/services/applicant/account-info.serv
 export class AccountInfoComponent implements OnInit {
 
   // show hide action
-  formSH = false;
-  dataSH = true;
+  formOC = false;
+  dataOC = true;
   dataClose(){
-   this.formSH = true;
-   this.dataSH = false;
+   this.formOC = true;
+   this.dataOC = false;
+   this.passOC = false;
   }
 
   formClose(){
-    this.dataSH = true;
-    this.formSH = false;
+    this.dataOC = true;
+    this.formOC = false;
+    this.passOC = true;
   }
 
-  formOpen(){
-    this.formSH = true;
+
+  passOC = true;
+  passFormOC = false;
+
+  passFormO() {
+    this.passFormOC = true;
+    this.passOC = false;
+    this.dataOC = false;
+  }
+
+  passFormC() {
+    this.passFormOC = false;
+    this.passOC = true;
+    this.dataOC = true;
   }
 
   // show hide action
