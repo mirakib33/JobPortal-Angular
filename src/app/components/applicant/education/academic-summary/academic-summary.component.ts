@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AcademicSummaryComponent {
 
+
+
+
+
+  
   formOC = false;
   dataOC = true;
   dataClose(){
