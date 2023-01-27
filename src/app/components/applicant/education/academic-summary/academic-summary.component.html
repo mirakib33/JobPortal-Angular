@@ -38,56 +38,56 @@
   <!-- Academic summary view end -->
 
   <!-- accordion form start -->
-  <div *ngIf="formOC" class="container">
+  <div class="container">
     <div>
-      <form class="form-academic" action="" method="post">
+      <form [formGroup]="form" (ngSubmit)="submit()" *ngIf="formOC" class="form-academic" action="" method="post">
         <div class="row my-1">
           <div class="col-lg-6 mb-3">
             <label for="degree" class="form-label">Degree</label>
-            <select class="form-select">
+            <select class="form-select" formControlName="degree">
               <option selected>Select</option>
-              <option value="1">PSC/5 pass</option>
-              <option value="2">JSC/JDC/8 pass</option>
-              <option value="3">SSC/Dakhil/O Level</option>
-              <option value="4">HSC/Alim/A Level/</option>
-              <option value="5">Diploma</option>
-              <option value="6">Bachelor/Honours</option>
-              <option value="7">Masters</option>
-              <option value="5">PhD(Doctor of Philosophy)</option>
+              <option value="psc">PSC/5 pass</option>
+              <option value="jsc">JSC/JDC/8 pass</option>
+              <option value="ssc">SSC/Dakhil/O Level</option>
+              <option value="hsc">HSC/Alim/A Level/</option>
+              <option value="diploma">Diploma</option>
+              <option value="honours">Bachelor/Honours</option>
+              <option value="masters">Masters</option>
+              <option value="phd">PhD(Doctor of Philosophy)</option>
             </select>
           </div>
           <div class="col-lg-6">
             <label for="subject" class="form-label">Subject/Group</label>
-            <input type="text" class="form-control" placeholder="Subject/Group">
+            <input type="text" class="form-control" placeholder="Subject/Group" formControlName="subjectGroup">
           </div>
         </div>
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="institute" class="form-label">Institute/Board</label>
-            <input type="text" class="form-control" placeholder="Institute/Board">
+            <input type="text" class="form-control" placeholder="Institute/Board" formControlName="instituteBoard">
           </div>
           <div class="col-lg-6">
             <label for="passingYear" class="form-label">Year of Passing</label>
-            <input type="number" class="form-control" placeholder="Year">
+            <input type="number" class="form-control" placeholder="Year" formControlName="passingYear">
           </div>
         </div>
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="result" class="form-label">Result</label>
-            <input type="number" class="form-control" placeholder="GPA/CGPA">
+            <input type="number" class="form-control" placeholder="GPA/CGPA" formControlName="result">
           </div>
           <div class="col-lg-6">
             <label for="scale" class="form-label">Scale</label>
-            <select class="form-select">
+            <select class="form-select" formControlName="scale">
               <option selected>Select</option>
-              <option value="1">Out of 4</option>
-              <option value="2">Out of 5</option>
+              <option value="4">Out of 4</option>
+              <option value="5">Out of 5</option>
             </select>
           </div>
         </div>
         <div class="my-2">
           <button  (click)="formClose()" type="submit" class="btn btn-primary me-3">Save</button>
-          <button (click)="formClose()" type="submit" class="btn btn-primary">Close</button>
+          <button (click)="formClose()" class="btn btn-primary">Close</button>
         </div>
       </form>
     </div>

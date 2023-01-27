@@ -10,7 +10,7 @@ export class AccountInfoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private url = "http://localhost:8080";
+  private url = "http://localhost:8080/applicant";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,7 +20,7 @@ export class AccountInfoService {
 
   save(accountInfo: AccountInfo): Observable<any> {
   
-    return this.httpClient.post(this.url + '/signup', JSON.stringify(accountInfo), this.httpOptions)
+    return this.httpClient.post(this.url + '/account-info', JSON.stringify(accountInfo), this.httpOptions)
   
     .pipe(
       catchError(this.errorHandler)
