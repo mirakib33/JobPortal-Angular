@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AcademicSummary } from 'src/app/models/applicant/academic-summary.model';
 import { AcademicSummaryService } from 'src/app/services/applicant/academic-summary.service';
 
 @Component({
@@ -10,9 +11,26 @@ import { AcademicSummaryService } from 'src/app/services/applicant/academic-summ
 })
 export class AcademicSummaryComponent {
 
-  constructor(private academicSummaryService:AcademicSummaryService, private router: Router) { }
-
   form!: FormGroup;
+  id: number = 36;
+  userId: number = 2;
+  academicSummary: AcademicSummary;
+  academicSummaries: AcademicSummary[] = [];
+  constructor(private academicSummaryService:AcademicSummaryService, private router: Router) { 
+
+    this.academicSummary = {
+      id:0,
+      degree: '',
+      subjectGroup: '',
+      instituteBoard: '',
+      passingYear: '',
+      result: 0.0,
+      scale: '',
+      userId: 2
+    }
+
+  }
+
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -20,15 +38,50 @@ export class AcademicSummaryComponent {
       subjectGroup: new FormControl(''),
       instituteBoard: new FormControl(''),
       passingYear: new FormControl(''),
-      result: new FormControl(''),
-      scale: new FormControl('')
+      result: new FormControl(0.0),
+      scale: new FormControl(''),
+      userId: new FormControl(2)
     });
+
+    this.academicSummaryService.find(this.id).subscribe((data: AcademicSummary)=>{
+      this.academicSummary = data;
+    });
+
+    this.academicSummaryService.getAll().subscribe((data: AcademicSummary[])=>{
+      this.academicSummaries = data;
+    })
 
   }
 
+  abc!: AcademicSummary;
   submit(){
+   
     this.academicSummaryService.save(this.form.value).subscribe((res:any) => {
+      this.abc = res;
+      console.log("Af Subbmit called---", this.abc);
       this.router.navigateByUrl('/applicant/academic-summary');
+    })
+  }
+
+  update(){
+    this.academicSummaryService.update(this.id, this.form.value).subscribe((res:any) => {
+         this.router.navigateByUrl('applicant/academic-summary');
+    })
+  }
+
+  updateByUserId(){
+    console.log("Be Subbmit called---");
+    this.academicSummaryService.updateByUserId(this.userId, this.form.value).subscribe((res:any) => {
+      this.academicSummary = res;
+      console.log("Af Subbmit called---", this.abc);
+      
+      this.router.navigateByUrl('applicant/academic-summary');
+    })
+  }
+
+  deletePost(id:number){
+    this.academicSummaryService.delete(id).subscribe(res => {
+         this.academicSummaries = this.academicSummaries.filter(item => item.id !== id);
     })
   }
 

@@ -1,8 +1,10 @@
 export class AcademicSummary {
+    id!:number;
     degree!: String;
     subjectGroup!: String;
     instituteBoard!: String;
-    passingYear!: number;
+    passingYear!: String;
     result!: number;
-    scale!: number;
+    scale!: String;
+    userId!:number;
 }

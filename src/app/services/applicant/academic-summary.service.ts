@@ -27,6 +27,50 @@ export class AcademicSummaryService {
     )
   }
 
+  getAll(): Observable<any> {
+  
+    return this.httpClient.get(this.url + '/academic-summary')
+  
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
+  find(id:number): Observable<any> {
+  
+    return this.httpClient.get(this.url + '/academic-summary/' + id)
+  
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
+  update(id:number, academicSummary:AcademicSummary): Observable<any> {
+  
+    return this.httpClient.put(this.url + '/academic-summary' + id, JSON.stringify(academicSummary), this.httpOptions)
+ 
+    .pipe( 
+      catchError(this.errorHandler)
+    )
+  }
+
+  updateByUserId(id:number, academicSummary:AcademicSummary): Observable<any> {
+  
+    return this.httpClient.put(this.url + '/academic-summaryByUserId/' + id, JSON.stringify(academicSummary), this.httpOptions)
+ 
+    .pipe( 
+      catchError(this.errorHandler)
+    )
+  }
+
+  delete(id:number){
+    return this.httpClient.delete(this.url + '/academic-summary' + id, this.httpOptions)
+  
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
   errorHandler(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

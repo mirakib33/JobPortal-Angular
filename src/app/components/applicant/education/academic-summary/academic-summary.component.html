@@ -7,7 +7,7 @@
     <div class="academic-summary">
       <div class="row">
         <div class="col-sm-6">
-          <h3 class="fw-bold">Degree</h3>
+          <h3 class="fw-bold">Degree: {{academicSummary.degree}}</h3>
         </div>
         <div class="col-sm-6">
           <h3 class="fw-bold">Subject/Group</h3>
@@ -40,7 +40,7 @@
   <!-- accordion form start -->
   <div class="container">
     <div>
-      <form [formGroup]="form" (ngSubmit)="submit()" *ngIf="formOC" class="form-academic" action="" method="post">
+      <form [formGroup]="form" (ngSubmit)="updateByUserId()" *ngIf="formOC" class="form-academic" method="post">
         <div class="row my-1">
           <div class="col-lg-6 mb-3">
             <label for="degree" class="form-label">Degree</label>
@@ -68,7 +68,7 @@
           </div>
           <div class="col-lg-6">
             <label for="passingYear" class="form-label">Year of Passing</label>
-            <input type="number" class="form-control" placeholder="Year" formControlName="passingYear">
+            <input type="text" class="form-control" placeholder="Year" formControlName="passingYear">
           </div>
         </div>
         <div class="row my-3">
@@ -78,7 +78,7 @@
           </div>
           <div class="col-lg-6">
             <label for="scale" class="form-label">Scale</label>
-            <select class="form-select" formControlName="scale">
+            <select class="form-select"  type="text" formControlName="scale">
               <option selected>Select</option>
               <option value="4">Out of 4</option>
               <option value="5">Out of 5</option>
@@ -86,7 +86,7 @@
           </div>
         </div>
         <div class="my-2">
-          <button  (click)="formClose()" type="submit" class="btn btn-primary me-3">Save</button>
+          <button  type="submit" class="btn btn-primary me-3">Save</button>
           <button (click)="formClose()" class="btn btn-primary">Close</button>
         </div>
       </form>
