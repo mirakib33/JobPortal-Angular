@@ -9,23 +9,27 @@
 
     <div class="row">
       <div class="col-sm-6">
-        <h3 class="fw-bold">First Name</h3> 
+        <h3 class="fw-bold">First Name</h3>
+        <p>{{accountInfo.firstName}}</p>
       </div>
       <div class="col-sm-6">
         <h3 class="fw-bold">Last Name</h3>
+        <p>{{accountInfo.lastName}}</p>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6">
         <h3 class="fw-bold">Email</h3>
+        <p>{{accountInfo.email}}</p>
       </div>
       <div class="col-sm-6">
         <h3 class="fw-bold">Phone</h3>
+        <p>{{accountInfo.phone}}</p>
       </div>
     </div>
   </div>
   <div>
-    <button (click)="dataClose()" class="btn btn-primary">Edit</button>
+    <button (click)="setValue()" class="btn btn-primary">Edit</button>
   </div><br><br>
 </div><br><br>
 
@@ -34,11 +38,11 @@
 <!-- Accordion form start -->
 <div *ngIf="formOC" class="container">
     <div>
-        <form [formGroup]="form" (ngSubmit)="submit()" class="account-info">
+        <form [formGroup]="form" (ngSubmit)="update()" class="account-info">
             <div class="row my-3">
                 <div class="">
                     <label for="photo" class="form-label">Upload Photo</label>
-                    <input type="file" class="form-control" id="photo" formControlName="photo">
+                    <!-- <input type="file" class="form-control" id="photo" formControlName="photo"> -->
                 </div>  
             </div>
             <div class="row my-1">
@@ -63,7 +67,7 @@
             </div>
             
             <div class="mt-2">
-                <button (click)="formClose()" type="submit" class="btn btn-primary me-3" id="btn_save">Save</button>
+                <button type="submit" class="btn btn-primary me-3" id="btn_save">Save</button>
                 <button (click)="formClose()" class="btn btn-primary">Close</button>
             </div>
         </form><br><br>
@@ -78,7 +82,7 @@
 <div *ngIf="passFormOC" class="container">
     <div>
         <div class="my-3">
-          <form [formGroup]="form" (ngSubmit)="submit()" class="form-password" action="" method="post">
+          <form [formGroup]="form" (ngSubmit)="updatePass()" class="form-password" action="" method="post">
             <div class="row my-3">
               <div class="mb-3">
                 <label for="old-password" class="form-label">Old Password</label>
@@ -95,7 +99,7 @@
             </div>
             
             <div class="mt-2">
-                <button (click)="passFormC()" type="submit" class="btn btn-primary me-3">Save</button>
+                <button type="submit" class="btn btn-primary me-3">Save</button>
                 <button (click)="passFormC()" class="btn btn-primary">Close</button>
             </div>
         </form>

@@ -27,6 +27,24 @@ export class AccountInfoService {
     )
   }
 
+  find(id:number): Observable<any> {
+  
+    return this.httpClient.get(this.url + '/account-info/' + id)
+  
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
+  update(id:number, accountInfo:AccountInfo): Observable<any> {
+  
+    return this.httpClient.put(this.url + '/account-info/' + id, JSON.stringify(accountInfo), this.httpOptions)
+ 
+    .pipe( 
+      catchError(this.errorHandler)
+    )
+  }
+
   errorHandler(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AccountInfo } from 'src/app/models/applicant/account-info.model';
 import { AccountInfoService } from 'src/app/services/applicant/account-info.service';
 
 @Component({
@@ -42,12 +44,31 @@ export class AccountInfoComponent implements OnInit {
 
   // show hide action
 
-  constructor(private accountInfoService: AccountInfoService) { }
 
   form!: FormGroup;
+  id: number = 33;
+  accountInfo!: AccountInfo;
+
+  constructor(private accountInfoService: AccountInfoService, private router: Router) {
+
+    this.accountInfo = {
+      id:0,
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: 0,
+      password: '',
+    }
+
+   }
+
+   
+
+
 
   ngOnInit(): void {
     this.form = new FormGroup({
+      id: new FormControl(33),
       firstName: new FormControl(''),
       lastName: new FormControl(''),
       email: new FormControl(''),
@@ -55,11 +76,47 @@ export class AccountInfoComponent implements OnInit {
       password: new FormControl('')
     });
 
-  }
+    this.accountInfoService.find(this.id).subscribe((data: AccountInfo)=>{
+      this.accountInfo = data;
+    });
 
-  submit(){
-    this.accountInfoService.save(this.form.value).subscribe((res:any) => {
+  }
+setValue(){
+
+  this.formOC = true;
+   this.dataOC = false;
+   this.passOC = false;
+   this.form = new FormGroup({
+      id: new FormControl(33),
+      firstName: new FormControl(this.accountInfo.firstName),
+      lastName: new FormControl(this.accountInfo.lastName),
+      email: new FormControl(this.accountInfo.email),
+      phone: new FormControl(this.accountInfo.phone),
+      password: new FormControl(this.accountInfo.password)
+    });
+}
+ 
+  update(){
+    console.log("Be Subbmit called---");
+    this.accountInfoService.update(this.id, this.form.value).subscribe((res:any) => {
+      this.accountInfo = res;      
+      this.router.navigateByUrl('applicant/account-info');
     })
   }
+
+  updatePass(){
+    console.log("Be Subbmit called---");
+    this.accountInfoService.update(this.id, this.form.value).subscribe((res:any) => {
+      this.accountInfo = res;
+      // console.log("Af Subbmit called---", this.abc);
+      
+      this.router.navigateByUrl('applicant/account-info');
+    })
+  }
+
+  // submit(){
+  //   this.accountInfoService.save(this.form.value).subscribe((res:any) => {
+  //   })
+  // }
 
 }

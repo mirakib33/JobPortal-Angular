@@ -65,7 +65,7 @@ const routes: Routes = [
     component : SignupComponent
   },
   {
-    path : "permanent-job-details",
+    path : "job/:jobId/view",
     component : PerJobViewComponent
   },
   {
