@@ -12,7 +12,7 @@ import { AcademicSummaryService } from 'src/app/services/applicant/academic-summ
 export class AcademicSummaryComponent {
 
   form!: FormGroup;
-  id: number = 36;
+  id: number = 33;
   userId: number = 2;
   academicSummary: AcademicSummary;
   academicSummaries: AcademicSummary[] = [];

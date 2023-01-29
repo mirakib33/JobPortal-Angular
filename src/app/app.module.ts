@@ -77,6 +77,7 @@ import { JobCategoryComponent } from './components/admin/job-category/job-catego
 import { JobListComponent } from './components/admin/job-list/job-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PerJobViewComponent } from './components/job/per-job-view/per-job-view.component';
 
 @NgModule({
   declarations: [
@@ -141,7 +142,8 @@ import { HttpClientModule } from '@angular/common/http';
     AdPaymentMethodComponent,
     UsersComponent,
     JobCategoryComponent,
-    JobListComponent
+    JobListComponent,
+    PerJobViewComponent
   ],
   imports: [
     BrowserModule,

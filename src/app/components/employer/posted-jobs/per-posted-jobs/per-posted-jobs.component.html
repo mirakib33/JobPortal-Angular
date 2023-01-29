@@ -1,1 +1,34 @@
-<p>per-posted-jobs works!</p>
+<div class="container">
+    <div class="row" *ngFor="let job of jobs">
+        <div class="col-lg-4">
+            <div class="card job-card" [routerLink]="['/permanent-job-details/', job.id, 'view']">
+            <div class="card-img-top row">
+                <div class="col">
+                <img src="assets/logo/google-logo.png" alt="Card image">
+                </div>
+                <div class="col">
+                <p class="fw-bold">{{ job.companyName }}</p>
+                <p>{{ job.location }}</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a class="stretched-link" [routerLink]="['/permanent-job-details/', job.id, 'view']">
+                    <h4 class="card-title fw-bold">{{ job.jobTitle }}</h4>
+                </a>
+            </div>
+            <div class="card-img-bottom row">
+                <div class="col left">
+                <p>{{ job.salary }}</p>
+                <p>{{ job.education }}</p>
+                <p>Posted: 2 days ago</p>
+                </div>
+                <div class="col">
+                <p>{{ job.employmentStatus }}</p>
+                <p>{{ job.experience }}</p>
+                <p>{{ job.deadline }}</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

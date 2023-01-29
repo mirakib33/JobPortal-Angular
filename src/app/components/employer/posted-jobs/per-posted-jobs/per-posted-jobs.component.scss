@@ -1,0 +1,30 @@
+// job card start
+
+.job-card {
+    width: 400px;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+    margin:8px;
+  }
+  
+  .job-card:hover {
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
+  
+  .job-card .card-img-top p {
+    margin-top: 10%;
+    
+  }
+  
+  .job-card .card-img-top img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%
+  }
+  
+  .job-card .card-img-bottom .left {
+    margin-left: 3%;
+  }
+  
+  // job card End
