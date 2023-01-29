@@ -140,181 +140,40 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-6" *ngFor="let job of jobs">
             <div class="card job-card">
             <div class="card-img-top row">
                 <div class="col">
                 <img src="assets/logo/google-logo.png" alt="Card image">
                 </div>
                 <div class="col">
-                <p class="fw-bold">Google</p>
-                <p>Dhaka, Bangladesh</p>
+                <p class="fw-bold">{{ job.companyName }}</p>
+                <p>{{ job.location }}</p>
                 </div>
             </div>
             <div class="card-body">
-                <h4 class="card-title fw-bold">Full Stack Java Developer</h4>
-            </div>
-            <div class="card-img-bottom row">
-                <div class="col left">
-                <p>80000-120000</p>
-                <p>Masters of Computer Science Engeneering</p>
-                <p>Posted: 2 days ago</p>
-                </div>
-                <div class="col">
-                <p>Full Time</p>
-                <p>2 to 3 years</p>
-                <p>Deadline: 15 february 2023</p>
-                </div>
-            </div>
-        </div>
-        </div>
+                <a class="stretched-link" [routerLink]="['/job/', job.id, 'view']">
+                    <h4 class="card-title fw-bold">{{ job.jobTitle }}</h4>
+                </a>
 
-        <div class="col-lg-4">
-            <div class="card job-card">
-            <div class="card-img-top row">
-                <div class="col">
-                <img src="assets/logo/google-logo.png" alt="Card image">
-                </div>
-                <div class="col">
-                <p class="fw-bold">Google</p>
-                <p>Dhaka, Bangladesh</p>
-                </div>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title fw-bold">Full Stack Java Developer</h4>
-            </div>
-            <div class="card-img-bottom row">
-                <div class="col left">
-                <p>80000-120000</p>
-                <p>Masters of Computer Science Engeneering</p>
-                <p>Posted: 2 days ago</p>
-                </div>
-                <div class="col">
-                <p>Full Time</p>
-                <p>2 to 3 years</p>
-                <p>Deadline: 15 february 2023</p>
+                <div class=" row">
+                    <div class="col left">
+                    <p>{{ job.salary }}</p>
+                    <p>{{ job.education }}</p>
+                    <p>Posted: 2 days ago</p>
+                    </div>
+                    <div class="col">
+                    <p>{{ job.employmentStatus }}</p>
+                    <p>{{ job.experience }}</p>
+                    <p>{{ job.deadline }}</p>
+                    <p>{{ job.id }}</p>
+                    </div>
                 </div>
             </div>
+            
         </div>
-        </div>
-
-        <div class="col-lg-4">
-            <div class="card job-card">
-            <div class="card-img-top row">
-                <div class="col">
-                <img src="assets/logo/google-logo.png" alt="Card image">
-                </div>
-                <div class="col">
-                <p class="fw-bold">Google</p>
-                <p>Dhaka, Bangladesh</p>
-                </div>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title fw-bold">Full Stack Java Developer</h4>
-            </div>
-            <div class="card-img-bottom row">
-                <div class="col left">
-                <p>80000-120000</p>
-                <p>Masters of Computer Science Engeneering</p>
-                <p>Posted: 2 days ago</p>
-                </div>
-                <div class="col">
-                <p>Full Time</p>
-                <p>2 to 3 years</p>
-                <p>Deadline: 15 february 2023</p>
-                </div>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-lg-4">
-            <div class="card job-card">
-            <div class="card-img-top row">
-                <div class="col">
-                <img src="assets/logo/google-logo.png" alt="Card image">
-                </div>
-                <div class="col">
-                <p class="fw-bold">Google</p>
-                <p>Dhaka, Bangladesh</p>
-                </div>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title fw-bold">Full Stack Java Developer</h4>
-            </div>
-            <div class="card-img-bottom row">
-                <div class="col left">
-                <p>80000-120000</p>
-                <p>Masters of Computer Science Engeneering</p>
-                <p>Posted: 2 days ago</p>
-                </div>
-                <div class="col">
-                <p>Full Time</p>
-                <p>2 to 3 years</p>
-                <p>Deadline: 15 february 2023</p>
-                </div>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-lg-4">
-            <div class="card job-card">
-            <div class="card-img-top row">
-                <div class="col">
-                <img src="assets/logo/google-logo.png" alt="Card image">
-                </div>
-                <div class="col">
-                <p class="fw-bold">Google</p>
-                <p>Dhaka, Bangladesh</p>
-                </div>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title fw-bold">Full Stack Java Developer</h4>
-            </div>
-            <div class="card-img-bottom row">
-                <div class="col left">
-                <p>80000-120000</p>
-                <p>Masters of Computer Science Engeneering</p>
-                <p>Posted: 2 days ago</p>
-                </div>
-                <div class="col">
-                <p>Full Time</p>
-                <p>2 to 3 years</p>
-                <p>Deadline: 15 february 2023</p>
-                </div>
-            </div>
         </div>
     </div>
-
-        <div class="col-lg-4">
-            <div class="card job-card">
-            <div class="card-img-top row">
-                <div class="col">
-                <img src="assets/logo/google-logo.png" alt="Card image">
-                </div>
-                <div class="col">
-                <p class="fw-bold">Google</p>
-                <p>Dhaka, Bangladesh</p>
-                </div>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title fw-bold">Full Stack Java Developer</h4>
-            </div>
-            <div class="card-img-bottom row">
-                <div class="col left">
-                <p>80000-120000</p>
-                <p>Masters of Computer Science Engeneering</p>
-                <p>Posted: 2 days ago</p>
-                </div>
-                <div class="col">
-                <p>Full Time</p>
-                <p>2 to 3 years</p>
-                <p>Deadline: 15 february 2023</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-  </div>
 </div>
   
   <!-- All current job End -->
