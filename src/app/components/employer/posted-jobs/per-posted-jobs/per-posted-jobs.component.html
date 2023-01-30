@@ -11,7 +11,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let job of jobs" [routerLink]="['/job/', job.id, 'view']">
+        <tr *ngFor="let job of jobs" [routerLink]="['/job/', job.per_jobpost_id, 'view']">
             <td>
             <div class="d-flex align-items-center">
                 <div>
@@ -30,10 +30,10 @@
             <td>Senior</td>
             <td>
                 <div>
-                    <button type="button" class="btn btn-sm btn-primary mb-1">Edit</button>
+                    <button [routerLink]="['/employer/per-job-post/', job.per_jobpost_id]" type="button" class="btn btn-sm btn-outline-primary mb-1">Edit</button>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                    <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
                 </div>
             </td>
         </tr>

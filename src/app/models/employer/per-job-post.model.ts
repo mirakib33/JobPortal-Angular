@@ -1,5 +1,5 @@
 export class PerJobPost {
-    id!:number;
+    per_jobpost_id!:number;
     picture!: String;
     deadline!: String;
     jobTitle!: String;

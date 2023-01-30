@@ -91,8 +91,7 @@ setValue(){
       firstName: new FormControl(this.accountInfo.firstName),
       lastName: new FormControl(this.accountInfo.lastName),
       email: new FormControl(this.accountInfo.email),
-      phone: new FormControl(this.accountInfo.phone),
-      password: new FormControl(this.accountInfo.password)
+      phone: new FormControl(this.accountInfo.phone)
     });
 }
  

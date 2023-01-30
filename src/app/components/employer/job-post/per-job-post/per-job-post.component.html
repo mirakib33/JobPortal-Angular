@@ -6,31 +6,31 @@
             <div class="row my-3">
                 <div class="col-lg-6 mb-3">
                     <label for="picture" class="form-label">Upload Company Logo</label>
-                    <input  formControlName="picture" type="text" class="form-control">
+                    <input [(ngModel)]="perJobPost.picture" formControlName="picture" type="text" class="form-control">
                 </div>
                 <div class="col-lg-6">
                     <label for="deadline" class="form-label">Deadline</label>
-                    <input  formControlName="deadline" type="datetime-local" class="form-control" placeholder="Last Date of Application">
+                    <input [(ngModel)]="perJobPost.deadline" formControlName="deadline" type="datetime-local" class="form-control" placeholder="Last Date of Application">
                 </div>
             </div>
             <div class="row my-3">
                 <div class="col-lg-6 mb-3">
                     <label for="job-title" class="form-label">Job Title</label>
-                    <input  formControlName="jobTitle" type="text" class="form-control" placeholder="Job Title">
+                    <input [(ngModel)]="perJobPost.jobTitle" formControlName="jobTitle" type="text" class="form-control" placeholder="Job Title">
                 </div>
                 <div class="col-lg-6">
                     <label for="company-name" class="form-label">Company Name</label>
-                    <input  formControlName="companyName" type="text" class="form-control" placeholder="Company Name">
+                    <input [(ngModel)]="perJobPost.companyName" formControlName="companyName" type="text" class="form-control" placeholder="Company Name">
                 </div>
             </div>
             <div class="row my-3">
                 <div class="col-lg-6 mb-3">
                     <label for="number-of-vacancy" class="form-label">Number of Vacancy</label>
-                    <input  formControlName="vacancyNumber" type="number" class="form-control" placeholder="Number of Vacancy">
+                    <input [(ngModel)]="perJobPost.vacancyNumber" formControlName="vacancyNumber" type="number" class="form-control" placeholder="Number of Vacancy">
                 </div>
                 <div class="col-lg-6">
                     <label for="employment-status" class="form-label">Employment Status</label>
-                    <select  formControlName="employmentStatus" class="form-select">
+                    <select [(ngModel)]="perJobPost.employmentStatus" formControlName="employmentStatus" class="form-select">
                         <option selected>Select</option>
                         <option value="Part-time">Part-time</option>
                         <option value="Full-time">Full-time</option>
@@ -41,11 +41,11 @@
             <div class="row my-3">
                 <div class="col-lg-6 mb-3">
                     <label for="location" class="form-label">Location</label>
-                    <input  formControlName="location" type="text" class="form-control" placeholder="Location">
+                    <input [(ngModel)]="perJobPost.location" formControlName="location" type="text" class="form-control" placeholder="Location">
                 </div>
                 <div class="col-lg-6">
                     <label for="work-place" class="form-label">Workplace</label>
-                    <select  formControlName="workplace" class="form-select">
+                    <select [(ngModel)]="perJobPost.workplace" formControlName="workplace" class="form-select">
                         <option selected>Select</option>
                         <option value="Work from Home">Work from Home</option>
                         <option value="Work at office">Work at office</option>
@@ -55,7 +55,7 @@
             <div class="row my-3">
                 <div class="col-lg-6 mb-3">
                     <label for="gender" class="form-label">Gender</label>
-                    <select  formControlName="gender" class="form-select">
+                    <select [(ngModel)]="perJobPost.gender" formControlName="gender" class="form-select">
                         <option selected>Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -65,47 +65,47 @@
                 </div>
                 <div class="col-lg-6">
                     <label for="age" class="form-label">Age</label>
-                    <input  formControlName="age" type="number" class="form-control" placeholder="Age">
+                    <input [(ngModel)]="perJobPost.age" formControlName="age" type="number" class="form-control" placeholder="Age">
                 </div>
             </div>
             <div class="row my-3">
                 <div class="col-lg-6 mb-3">
                     <label for="job-context" class="form-label">Job Context</label>
-                    <textarea  formControlName="jobContext" type="text" class="form-control" placeholder="Job Context"></textarea>
+                    <textarea [(ngModel)]="perJobPost.jobContext" formControlName="jobContext" type="text" class="form-control" placeholder="Job Context"></textarea>
                 </div>
                 <div class="col-lg-6">
                     <label for="duties" class="form-label">Duties/Responsibilities</label>
-                    <textarea  formControlName="duties" type="text" class="form-control" placeholder="Duties/Responsibilities"></textarea>
+                    <textarea [(ngModel)]="perJobPost.duties" formControlName="duties" type="text" class="form-control" placeholder="Duties/Responsibilities"></textarea>
                 </div>
             </div>
             <div class="row my-3">
                 <div class="col-lg-6 mb-3">
                     <label for="education" class="form-label">Education</label>
-                    <input  formControlName="education" type="text" class="form-control" placeholder="Education">
+                    <input [(ngModel)]="perJobPost.education" formControlName="education" type="text" class="form-control" placeholder="Education">
                 </div>
                 <div class="col-lg-6">
                     <label for="experience" class="form-label">Experience</label>
-                    <input  formControlName="experience" type="text" class="form-control" placeholder="Experience">
+                    <input [(ngModel)]="perJobPost.experience" formControlName="experience" type="text" class="form-control" placeholder="Experience">
                 </div>
             </div>
             <div class="row my-3">
                 <div class="col-lg-6 mb-3">
                     <label for="additional-requirements" class="form-label">Additional Requirements</label>
-                    <textarea  formControlName="additionalRequirements" type="text" class="form-control" placeholder="Additional Requirements"></textarea>
+                    <textarea [(ngModel)]="perJobPost.additionalRequirements" formControlName="additionalRequirements" type="text" class="form-control" placeholder="Additional Requirements"></textarea>
                 </div>
                 <div class="col-lg-6">
                     <label for="other-benefits" class="form-label">Other Benefits</label>
-                    <textarea  formControlName="otherBenifits" type="text" class="form-control" placeholder="Other Benefits"></textarea>
+                    <textarea [(ngModel)]="perJobPost.otherBenifits" formControlName="otherBenifits" type="text" class="form-control" placeholder="Other Benefits"></textarea>
                 </div>
             </div>
             <div class="row my-3">
                 <div class="col-lg-6 mb-3">
                     <label for="salary" class="form-label">Salary</label>
-                    <input formControlName="salary" type="number" class="form-control" placeholder="Salary">
+                    <input [(ngModel)]="perJobPost.salary" formControlName="salary" type="number" class="form-control" placeholder="Salary">
                 </div>
                 <div class="col-lg-6">
                     <label for="category" class="form-label">Job Category</label>
-                    <input formControlName="jobCategory" type="text" class="form-control" placeholder="Job Category">
+                    <input [(ngModel)]="perJobPost.jobCategory" formControlName="jobCategory" type="text" class="form-control" placeholder="Job Category">
                 </div>
             </div>
             

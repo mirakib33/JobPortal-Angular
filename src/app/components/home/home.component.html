@@ -140,7 +140,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-6" *ngFor="let job of jobs">
+        <div class="col-lg-4" *ngFor="let job of jobs">
             <div class="card job-card">
             <div class="card-img-top row">
                 <div class="col">
@@ -152,7 +152,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <a class="stretched-link" [routerLink]="['/job/', job.id, 'view']">
+                <a class="stretched-link" [routerLink]="['/job/', job.per_jobpost_id, 'view']">
                     <h4 class="card-title fw-bold">{{ job.jobTitle }}</h4>
                 </a>
 
@@ -166,7 +166,7 @@
                     <p>{{ job.employmentStatus }}</p>
                     <p>{{ job.experience }}</p>
                     <p>{{ job.deadline }}</p>
-                    <p>{{ job.id }}</p>
+                    <p>{{ job.per_jobpost_id }}</p>
                     </div>
                 </div>
             </div>

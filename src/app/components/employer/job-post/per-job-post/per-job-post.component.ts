@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PerJobPost } from 'src/app/models/employer/per-job-post.model';
 import { PerJobPostService } from 'src/app/services/employer/per-job-post.service';
 
@@ -12,36 +12,11 @@ import { PerJobPostService } from 'src/app/services/employer/per-job-post.servic
 export class PerJobPostComponent {
 
   form!: FormGroup;
-  id: number = 33;
-  userId: number = 2;
-  perJobPost: PerJobPost;
-  perJobPosts: PerJobPost[] = [];
-  constructor(private perJobPostService:PerJobPostService, private router: Router) { 
-
-    this.perJobPost = {
-      id:0,
-      picture:  ' ',
-      deadline:  ' ',
-      jobTitle:  ' ',
-      companyName:  ' ',
-      vacancyNumber:  0,
-      employmentStatus:  '',
-      location: '',
-      workplace:  '',
-      gender:  '',
-      age:  0,
-      jobContext:  '',
-      duties:  '',
-      education:  '',
-      experience:  '',
-      additionalRequirements:  '',
-      otherBenifits:  '',
-      salary:  0.0,
-      jobCategory:  '',
-      userId:  0,
-    }
-
-  }
+  id!: number;
+  // userId: number = 2;
+  perJobPost!: PerJobPost;
+  // perJobPosts: PerJobPost[] = [];
+  constructor(private perJobPostService:PerJobPostService, private router: Router, private route: ActivatedRoute,) { }
 
 
   ngOnInit(): void {
@@ -67,31 +42,27 @@ export class PerJobPostComponent {
       userId: new FormControl('')
     });
 
+    this.id = this.route.snapshot.params['jobId'];
+
     this.perJobPostService.find(this.id).subscribe((data: PerJobPost)=>{
       this.perJobPost = data;
     });
 
-    this.perJobPostService.getAll().subscribe((data: PerJobPost[])=>{
-      this.perJobPosts = data;
-    })
-
   }
 
-  abc!: PerJobPost;
+  
   submit(){
    
     this.perJobPostService.save(this.form.value).subscribe((res:any) => {
-      this.abc = res;
-      console.log("Af Subbmit called---", this.abc);
       this.router.navigateByUrl('/employer/per-posted-jobs');
     })
   }
 
-  update(){
-    this.perJobPostService.update(this.id, this.form.value).subscribe((res:any) => {
-         this.router.navigateByUrl('applicant/academic-summary');
-    })
-  }
+  // update(){
+  //   this.perJobPostService.update(this.id, this.form.value).subscribe((res:any) => {
+  //        this.router.navigateByUrl('applicant/academic-summary');
+  //   })
+  // }
 
   // deletePost(id:number){
   //   this.perJobPostService.delete(id).subscribe(res => {

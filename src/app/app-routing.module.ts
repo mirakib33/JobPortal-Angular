@@ -180,6 +180,10 @@ const routes: Routes = [
         component : PerJobPostComponent
       },
       {
+        path : "per-job-post/:jobId",
+        component : PerJobPostComponent
+      },
+      {
         path : "free-job-post",
         component : FreeJobPostComponent
       },
