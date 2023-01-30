@@ -64,10 +64,4 @@ export class PerJobPostComponent {
   //   })
   // }
 
-  // deletePost(id:number){
-  //   this.perJobPostService.delete(id).subscribe(res => {
-  //        this.perJobPosts = this.perJobPosts.filter(item => item.id !== id);
-  //   })
-  // }
-
 }

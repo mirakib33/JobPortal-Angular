@@ -54,14 +54,6 @@ export class PerJobPostService {
     )
   }
 
-  // delete(id:number){
-  //   return this.httpClient.delete(this.url + '/permanent-job-post/' + id, this.httpOptions)
-  
-  //   .pipe(
-  //     catchError(this.errorHandler)
-  //   )
-  // }
-
   errorHandler(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

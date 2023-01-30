@@ -1,0 +1,57 @@
+
+header {
+    padding: 1em;
+    text-align: center;
+  }
+
+  /* Style the main content area */
+  main {
+    margin: 1em;
+  }
+
+  /* Style the job title and company name */
+  h1, p {
+    margin: 0;
+  }
+
+  /* Style the job description section */
+  .description {
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+
+  /* Style the responsibilities and requirements sections */
+  .responsibilities, .requirements {
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+
+  /* Style the bullet points in the responsibilities and requirements sections */
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  /* Style the "How to Apply" section */
+  .apply {
+    padding: 1em;
+  }
+
+  /* Style the footer */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+  }
+
+ button {
+  width: 100px;
+ }
+
+
+
+
+
+  

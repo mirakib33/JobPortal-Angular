@@ -1,37 +1,48 @@
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <h1>{{ job.picture }}</h1>
-        </div>
-        <div class="col-6">
-            <h4>{{ job.companyName }}</h4>
-            <h5>{{ job.location }}</h5>
-        </div>
-    </div>
-
-    <h2>{{ job.jobTitle }}</h2>
-
-    <h3>Number of Vacancy</h3>
-    <p></p>
-
-    <h3>Workplace</h3>
-
-    <h3>Gender</h3>
-
-    <h3>Age</h3>
-
-    <h3>Educational Requirements</h3>
-
-    <h3>Experience Requirements</h3>
-
-    <h3>Job Context</h3>
-
-    <h3>Duties/Responsibilities</h3>
-
-    <h3>Additional Requirements</h3>
-
-    <h3>Salary</h3>
-
-    <h3>Other Benifits</h3>
-
+<div class="container bg-white border">
+    <header>
+        <h1>{{ job.jobTitle }}</h1>
+        <p>{{ job.companyName }}</p>
+        <p>{{ job.location }}</p>
+    </header>
+  <main>
+    <section class="description">
+      <h2>Job Description</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed egestas, magna eu aliquet aliquet, velit sapien dictum lacus, 
+        vel bibendum justo tellus et leo. Nam tincidunt, elit a consectetur 
+        varius, urna risus scelerisque nibh, eu commodo justo nisl a justo.
+      </p>
+    </section>
+    <section class="responsibilities">
+      <h2>Responsibilities</h2>
+      <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Sed egestas, magna eu aliquet</li>
+      </ul>
+    </section>
+    <section class="requirements">
+      <h2>Requirements</h2>
+      <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Sed egestas, magna eu aliquet</li>
+      </ul>
+    </section>
+    <section class="apply">
+    <h2>How to Apply</h2>
+    <p>
+      Please send your resume and cover letter to [email address].
+    </p>
+    </section>
+  </main>
+  <span class="d-flex justify-content-center my-5">
+    <button class="btn btn-primary">Apply</button>
+  </span>
+  <footer>
+    <p>Copyright © [Year] [Company Name]</p>
+  </footer>
 </div>
+
+
