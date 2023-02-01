@@ -62,10 +62,6 @@ export class AccountInfoComponent implements OnInit {
 
    }
 
-   
-
-
-
   ngOnInit(): void {
     this.form = new FormGroup({
       id: new FormControl(33),
@@ -81,6 +77,8 @@ export class AccountInfoComponent implements OnInit {
     });
 
   }
+
+  
 setValue(){
 
   this.formOC = true;
@@ -96,20 +94,14 @@ setValue(){
 }
  
   update(){
-    console.log("Be Subbmit called---");
     this.accountInfoService.update(this.id, this.form.value).subscribe((res:any) => {
-      this.accountInfo = res;      
-      this.router.navigateByUrl('applicant/account-info');
+      this.accountInfo = res;
     })
   }
 
   updatePass(){
-    console.log("Be Subbmit called---");
     this.accountInfoService.update(this.id, this.form.value).subscribe((res:any) => {
       this.accountInfo = res;
-      // console.log("Af Subbmit called---", this.abc);
-      
-      this.router.navigateByUrl('applicant/account-info');
     })
   }
 

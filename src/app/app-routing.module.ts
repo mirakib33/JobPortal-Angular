@@ -50,6 +50,8 @@ import { AdBalanceComponent } from './components/admin/ad-billing/ad-balance/ad-
 import { AdPaymentMethodComponent } from './components/admin/ad-billing/ad-payment-method/ad-payment-method.component';
 import { FreelanceJobComponent } from './components/job/freelance-job/freelance-job.component';
 import { PerJobViewComponent } from './components/job/per-job-view/per-job-view.component';
+import { AdminLoginComponent } from './components/login/admin-login/admin-login.component';
+import { AdminSignupComponent } from './components/signup/admin-signup/admin-signup.component';
 
 const routes: Routes = [
   {
@@ -61,8 +63,16 @@ const routes: Routes = [
     component : LoginComponent
   },
   {
+    path : "admin-login",
+    component : AdminLoginComponent
+  },
+  {
     path : "signup",
     component : SignupComponent
+  },
+  {
+    path : "admin-signup",
+    component : AdminSignupComponent
   },
   {
     path : "job/:jobId/view",

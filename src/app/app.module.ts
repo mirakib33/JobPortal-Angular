@@ -78,6 +78,8 @@ import { JobListComponent } from './components/admin/job-list/job-list.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PerJobViewComponent } from './components/job/per-job-view/per-job-view.component';
+import { AdminLoginComponent } from './components/login/admin-login/admin-login.component';
+import { AdminSignupComponent } from './components/signup/admin-signup/admin-signup.component';
 
 @NgModule({
   declarations: [
@@ -143,7 +145,9 @@ import { PerJobViewComponent } from './components/job/per-job-view/per-job-view.
     UsersComponent,
     JobCategoryComponent,
     JobListComponent,
-    PerJobViewComponent
+    PerJobViewComponent,
+    AdminLoginComponent,
+    AdminSignupComponent
   ],
   imports: [
     BrowserModule,

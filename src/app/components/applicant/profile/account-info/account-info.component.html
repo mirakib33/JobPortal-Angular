@@ -1,4 +1,4 @@
-<!-- Academic summary view start -->
+<!-- Account info summary view start -->
 
 <div *ngIf="dataOC" class="container">
   <div class="account-info">
@@ -33,7 +33,7 @@
   </div><br><br>
 </div><br><br>
 
-<!-- Academic summary view end -->
+<!-- Acount info summary view end -->
 
 <!-- Accordion form start -->
 <div *ngIf="formOC" class="container">
@@ -82,7 +82,7 @@
 <div *ngIf="passFormOC" class="container">
     <div>
         <div class="my-3">
-          <form [formGroup]="form" (ngSubmit)="updatePass()" class="form-password" action="" method="post">
+          <form [formGroup]="form" (ngSubmit)="updatePass()" class="form-password" method="post">
             <div class="row my-3">
               <div class="mb-3">
                 <label for="old-password" class="form-label">Old Password</label>

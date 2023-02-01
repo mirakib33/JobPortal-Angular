@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { JobCategory } from 'src/app/models/admin/job-category.model';
 import { PerJobPost } from 'src/app/models/employer/per-job-post.model';
+import { JobCategoryService } from 'src/app/services/admin/job-category.service';
 import { PerJobPostService } from 'src/app/services/employer/per-job-post.service';
 
 @Component({
@@ -16,7 +18,9 @@ export class PerJobPostComponent {
   // userId: number = 2;
   perJobPost!: PerJobPost;
   // perJobPosts: PerJobPost[] = [];
-  constructor(private perJobPostService:PerJobPostService, private router: Router, private route: ActivatedRoute,) { }
+
+  jobCategory!: JobCategory[];
+  constructor(private perJobPostService:PerJobPostService, private router: Router, private route: ActivatedRoute, private jobCategoryService:JobCategoryService) { }
 
 
   ngOnInit(): void {
@@ -48,15 +52,20 @@ export class PerJobPostComponent {
       this.perJobPost = data;
     });
 
+    this.jobCategoryService.getJobCategoryList().subscribe((data: JobCategory[])=>{
+      this.jobCategory = data;
+    })
+
   }
 
   
   submit(){
-   
-    this.perJobPostService.save(this.form.value).subscribe((res:any) => {
+   this.perJobPostService.save(this.form.value).subscribe((res:any) => {
       this.router.navigateByUrl('/employer/per-posted-jobs');
     })
   }
+
+
 
   // update(){
   //   this.perJobPostService.update(this.id, this.form.value).subscribe((res:any) => {

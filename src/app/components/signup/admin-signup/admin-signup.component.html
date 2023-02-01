@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="d-flex">
-		<form [formGroup]="form" (ngSubmit)="submit()" class="form-signup">
+		<form class="form-signup"> <!--  [formGroup]="form" (ngSubmit)="submit()" -->
 			<div class="card-title">
 				<h3 class="text-center">Sign Up to Job Portal</h3>
 			</div>
@@ -35,18 +35,6 @@
 						placeholder="Retype Password">
 				</div>
 			</div>
-			<div class="form-radio">
-				<div class="row my-3">
-					<div class="col-lg-6 mb-3">
-						<input formControlName="userType" value="applicant" type="radio" class="btn-check" name="options-outlined" id="applicant" autocomplete="off">
-						<label class="btn btn-outline-success w-100" for="applicant">I am an applicant</label>
-					</div>
-					<div class="col-lg-6 mb-3">
-						<input formControlName="userType" value="employer" type="radio" class="btn-check" name="options-outlined" id="employer" autocomplete="off">
-						<label class="btn btn-outline-success w-100" for="employer">I am an employer</label>
-					</div>
-				</div>
-			</div>
 			<div class="my-3 form-check">
 				<input formControlName="userAgreement" type="checkbox" class="form-check-input" id="exampleCheck1" required>
 				<label class="form-check-label" for="checkbox">Yes, I
@@ -61,7 +49,7 @@
 			</div>
 			<div class="mt-5 text-center">
 				<p>
-					Already have an account? <span><a routerLink="/login">Log In</a></span>
+					Already have an account? <span><a routerLink="/admin-login">Log In</a></span>
 				</p>
 			</div>
 		</form>

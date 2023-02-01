@@ -1,58 +1,125 @@
+<!-- Account info summary view start -->
+
+<div *ngIf="dataOC" class="container">
+    <div class="account-info">
+      
+      <div class="img-profile">
+        <img class="" src="assets/img/rakib.jpg"/>
+      </div>
+  
+      <div class="row">
+        <div class="col-sm-6">
+          <h3 class="fw-bold">First Name</h3>
+          <p>{{ empAccountInfo.firstName }}</p>
+        </div>
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Last Name</h3>
+          <p>{{ empAccountInfo.lastName }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Email</h3>
+          <p>{{ empAccountInfo.email }}</p>
+        </div>
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Phone</h3>
+          <p>{{ empAccountInfo.phone }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Company Name</h3>
+          <p>{{ empAccountInfo.companyName }}</p>
+        </div>
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Designation</h3>
+          <p>{{ empAccountInfo.designation }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Department</h3>
+          <p>{{ empAccountInfo.department }}</p>
+        </div>
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Company Location</h3>
+          <p>{{ empAccountInfo.companyLocation }}</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button (click)="setValue()" class="btn btn-primary">Edit</button>
+    </div><br><br>
+  </div><br><br>
+  
+  <!-- Acount info summary view end -->
+
+
 <!-- Accordion form start -->
-<div class="container">
+<div *ngIf="formOC" class="container">
     <div class="">
-      <form class="form-employer" action="" method="post">
+      <form [formGroup]="form" (ngSubmit)="update()" class="form-employer" method="post">
         <div class="row my-3">
             <div class="col-lg-6 mb-3">
                 <label for="firstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" placeholder="First name">
+                <input formControlName="firstName" type="text" class="form-control" placeholder="First name">
             </div>
             <div class="col-lg-6">
                 <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" placeholder="Last name">
+                <input formControlName="lastName" type="text" class="form-control" placeholder="Last name">
             </div>
         </div>
         <div class="row my-3">
             <div class="col-lg-6 mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" placeholder="Email">
+                <input formControlName="email" type="text" class="form-control" placeholder="Email">
             </div>
             <div class="col-lg-6">
                 <label for="phone" class="form-label">Phone</label>
-                <input type="number" class="form-control" placeholder="Phone">
+                <input formControlName="phone" type="number" class="form-control" placeholder="Phone">
             </div>
         </div>
         <div class="row my-3">
             <div class="col-lg-6 mb-3">
                 <label for="company-name" class="form-label">Company Name</label>
-                <input type="text" class="form-control" placeholder="Company Name">
+                <input formControlName="companyName" type="text" class="form-control" placeholder="Company Name">
             </div>
             <div class="col-lg-6">
                 <label for="designation" class="form-label">Designation</label>
-                <input type="text" class="form-control" placeholder="Designation">
+                <input formControlName="designation" type="text" class="form-control" placeholder="Designation">
             </div>
         </div>
         <div class="row my-3">
             <div class="col-lg-6 mb-3">
                 <label for="department" class="form-label">Department</label>
-                <input type="text" class="form-control" placeholder="Department">
+                <input formControlName="department" type="text" class="form-control" placeholder="Department">
             </div>
             <div class="col-lg-6">
                 <label for="company-location" class="form-label">Company Location</label>
-                <input type="text" class="form-control" placeholder="Company Location">
+                <input formControlName="companyLocation" type="text" class="form-control" placeholder="Company Location">
             </div>
         </div>
         
         
         <div class="mt-2">
-            <button type="submit" class="btn btn-primary">Save</button>
-            <button type="submit" class="btn btn-primary">Close</button>
+            <button type="submit" class="btn btn-primary me-3">Save</button>
+            <button (click)="formClose()" class="btn btn-primary">Close</button>
         </div>
     </form>
+</div>
+</div>
+
+
+<div *ngIf="passOC" class="container">
+    <p (click)="passFormO()" class="change-password">Change Password</p>
+</div>
 
         <!-- Change password fields -->
+        <div *ngIf="formOC" class="container">
+            <div class="">
         <div class="my-3">
-          <form class="form-password" action="" method="post">
+          <form [formGroup]="form" (ngSubmit)="updatePass()" class="form-password" method="post">
             <div class="row my-3">
               <div class="mb-3">
                 <label for="old-password" class="form-label">Old Password</label>
@@ -64,16 +131,16 @@
               </div>
               <div class="mb-3">
                 <label for="confirm-password" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" placeholder="Confirm Password">
+                <input formControlName="password" type="password" class="form-control" placeholder="Confirm Password">
               </div>
             </div>
             
             <div class="mt-2">
                 <button type="submit" class="btn btn-primary">Update</button>
-                <button type="submit" class="btn btn-primary">Close</button>
+                <button (click)="passFormC()" class="btn btn-primary">Close</button>
             </div>
         </form>
         </div>
     </div>
-</div>
+
   <!-- accordion form end -->

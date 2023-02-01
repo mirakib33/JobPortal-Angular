@@ -19,4 +19,5 @@ export class PerJobPost {
     salary!: number;
     jobCategory!: String;
     userId!: number;
+    cat_id!: number;
 }
