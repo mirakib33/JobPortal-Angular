@@ -24,98 +24,11 @@
 
         <!-- Job by category cards row start-->
         <div class="row job-category">
-            <div class="col-3">
+            <div class="col-3" *ngFor="let category of jobCategory">
                 <div class="card text-center my-4">
-                    <div class="card-body  ">
-                        <div class="icon">
-                            <i class="bi bi-code-slash"></i>
-                        </div>
+                    <div class="card-body">
                         <div>
-                            <h4 class="card-text">IT & Development</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-center my-4">
-                    <div class="card-body  ">
-                        <div class="icon">
-                            <i class="bi bi-calendar-plus"></i>
-                        </div>
-                        <div>
-                            <h4 class="card-text">NGO/Development</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-center my-4">
-                    <div class="card-body  ">
-                        <div class="icon">
-                            <i class="bi bi-chat-right-text"></i>
-                        </div>
-                        <div>
-                            <h4 class="card-text">Medical/Pharma</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-center my-4">
-                    <div class="card-body  ">
-                        <div class="icon">
-                            <i class="bi bi-prescription2"></i>
-                        </div>
-                        <div>
-                            <h4 class="card-text">Media/Ad./Event Mgt.</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-center my-4">
-                    <div class="card-body  ">
-                        <div class="icon">
-                            <i class="bi bi-camera-reels"></i>
-                        </div>
-                        <div>
-                            <h4 class="card-text">Marketing/Sales</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-center my-4">
-                    <div class="card-body  ">
-                        <div class="icon">
-                            <i class="bi bi-display"></i>
-                        </div>
-                        <div>
-                            <h4 class="card-text">Accounting/Finance</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-center my-4">
-                    <div class="card-body  ">
-                        <div class="icon">
-                            <i class="bi bi-cash-coin"></i>
-                        </div>
-                        <div>
-                            <h4 class="card-text">Garments/Textile</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-center my-4">
-                    <div class="card-body  ">
-                        <div class="icon">
-                            <i class="bi bi-building-check"></i>
-                        </div>
-                        <div>
-                            <h4 class="card-text">Engineer/Architects</h4>
+                            <h2 class="card-text">{{ category.categoryName }}</h2>
                         </div>
                     </div>
                 </div>
@@ -140,7 +53,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-4" *ngFor="let job of jobs">
+        <div class="col-sm-6 col-lg-4" *ngFor="let job of jobs">
             <div class="card job-card">
             <div class="card-img-top row">
                 <div class="col">

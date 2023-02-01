@@ -53,12 +53,10 @@ export class AcademicSummaryComponent {
 
   }
 
-  abc!: AcademicSummary;
+  
   submit(){
    
     this.academicSummaryService.save(this.form.value).subscribe((res:any) => {
-      this.abc = res;
-      console.log("Af Subbmit called---", this.abc);
       this.router.navigateByUrl('/applicant/academic-summary');
     })
   }
@@ -73,8 +71,6 @@ export class AcademicSummaryComponent {
     console.log("Be Subbmit called---");
     this.academicSummaryService.updateByUserId(this.userId, this.form.value).subscribe((res:any) => {
       this.academicSummary = res;
-      console.log("Af Subbmit called---", this.abc);
-      
       this.router.navigateByUrl('applicant/academic-summary');
     })
   }

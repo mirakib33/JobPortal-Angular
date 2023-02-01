@@ -21,13 +21,11 @@ export class PerJobViewComponent {
   constructor(
     public perJobPostService: PerJobPostService,
     private route: ActivatedRoute,
-    private router: Router
    ) { }
     
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['jobId'];
-        console.log("==================",this.id)
     this.perJobPostService.find(this.id).subscribe((data: PerJobPost)=>{
       this.job = data;
     });

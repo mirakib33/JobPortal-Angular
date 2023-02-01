@@ -13,7 +13,7 @@ export class JobCategoryComponent implements OnInit {
 
   form!: FormGroup;
   id!: number;
-  jobCategory: JobCategory[] = [];
+  jobCategory!: JobCategory[];
 
   constructor(private jobCategoryService:JobCategoryService) { }
 
@@ -24,12 +24,7 @@ export class JobCategoryComponent implements OnInit {
       categoryName: new FormControl(''),
     });
 
-  // setValue() {
-  //     this.form = new FormGroup({
-  //       id: new FormControl(this.jobCategory.id),
-  //       categoryName: new FormControl(this.jobCategory.categoryName),
-  //     });
-  //   }
+ 
 
     this.jobCategoryService.getAll().subscribe((data: JobCategory[])=>{
       this.jobCategory = data;
@@ -70,6 +65,12 @@ export class JobCategoryComponent implements OnInit {
         )
       }
     })
+  }
+
+  setValue() {
+    this.form = new FormGroup({
+      categoryName: new FormControl(this.jobCategory)
+    });
   }
 
 }
