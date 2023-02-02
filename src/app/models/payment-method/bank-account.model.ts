@@ -1,5 +1,5 @@
 export class BankAccount {
-    id!:number;
+    id!: number;
     ibanNumber!: number;
     postCode!: number;
     accountType!: String;

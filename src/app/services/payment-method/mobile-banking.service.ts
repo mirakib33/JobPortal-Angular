@@ -20,7 +20,7 @@ export class MobileBankingService {
 
   save(mobileBanking:MobileBanking): Observable<any> {
   
-    return this.httpClient.post(this.url + '/bank-account/', JSON.stringify(mobileBanking), this.httpOptions)
+    return this.httpClient.post(this.url + '/mobile-banking/', JSON.stringify(mobileBanking), this.httpOptions)
   
     .pipe(
       catchError(this.errorHandler)
@@ -29,7 +29,7 @@ export class MobileBankingService {
 
   getAll(): Observable<any> {
   
-    return this.httpClient.get(this.url + '/bank-account/')
+    return this.httpClient.get(this.url + '/mobile-banking/')
   
     .pipe(
       catchError(this.errorHandler)
@@ -38,7 +38,7 @@ export class MobileBankingService {
 
   find(id:number): Observable<any> {
   
-    return this.httpClient.get(this.url + '/bank-account/' + id)
+    return this.httpClient.get(this.url + '/mobile-banking/' + id)
   
     .pipe(
       catchError(this.errorHandler)
@@ -47,7 +47,7 @@ export class MobileBankingService {
 
   update(id:number, mobileBanking:MobileBanking): Observable<any> {
   
-    return this.httpClient.put(this.url + '/bank-account/' + id, JSON.stringify(mobileBanking), this.httpOptions)
+    return this.httpClient.put(this.url + '/mobile-banking/' + id, JSON.stringify(mobileBanking), this.httpOptions)
  
     .pipe( 
       catchError(this.errorHandler)
@@ -55,7 +55,7 @@ export class MobileBankingService {
   }
 
   delete(id:number){
-    return this.httpClient.delete(this.url + '/bank-account/' + id, this.httpOptions)
+    return this.httpClient.delete(this.url + '/mobile-banking/' + id, this.httpOptions)
   
     .pipe(
       catchError(this.errorHandler)

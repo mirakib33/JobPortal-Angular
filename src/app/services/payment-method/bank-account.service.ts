@@ -10,7 +10,7 @@ export class BankAccountService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private url = "http://localhost:8080/payment-methode";
+  private url = "http://localhost:8080/payment-method";
 
   httpOptions = {
     headers: new HttpHeaders({

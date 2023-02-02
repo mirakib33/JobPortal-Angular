@@ -1,5 +1,47 @@
- <!-- accordion form start -->
- <div class="container">
+<!-- Payment method list start -->
+<div class="container">
+  <h2>Mobile Banking</h2>
+  <table class="table align-middle mb-0">
+      <thead class="bg-light">
+      <tr>
+          <th>Type</th>
+          <th>Account Name</th>
+          <th>Account Number</th>
+          <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let mb of mobileBanking">
+          <td>
+          <div class="d-flex align-items-center">
+              <div>
+              <p class="">{{ mb.type }}</p>
+              </div>
+          </div>
+          </td>
+          <td>
+              <p class="">{{ mb.accountName }}</p>
+          </td>
+          <td>
+              <p class="">{{ mb.accountNumber }}</p>
+          </td>
+          <td>
+              <div>
+                  <button (click)="setValueMB(mb)" type="button" class="btn btn-sm btn-outline-success">Edit</button>
+              </div>
+              <div>
+                <button (click)="deleteMB(mb)" type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+              </div>
+          </td>
+      </tr>
+      </tbody>
+  </table>
+</div>
+<!-- Payment method list end -->
+
+
+<!-- form start -->
+<div class="container">
     <form class="form-personal" action="" method="post">
       <div class="row my-3">
         <div class="col-lg-6 mb-3">
@@ -8,135 +50,164 @@
         </div>
       </div>
       <div class="my-2">
-        <button type="submit" class="btn btn-primary">Find</button>
-        <button type="submit" class="btn btn-primary">Close</button>
+        <button type="submit" class="btn btn-primary me-2">Find</button>
+        <button type="submit" class="btn btn-primary mx-2">Close</button>
       </div>
     </form>
+  </div>
 
+
+
+
+  <div class="container">
     <div>
-      <form class="form-personal" action="" method="post">
+      <form [formGroup]="form" (ngSubmit)="submit()" class="form-bank" method="post">
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="iban-number" class="form-label">IBAN Number</label>
-            <input type="text" class="form-control" placeholder="IBAN Number">
+            <input type="number" class="form-control" placeholder="IBAN Number" formControlName="ibanNumber">
           </div>
           <div class="col-lg-6">
             <label for="post-code" class="form-label">Post Code</label>
-            <input type="text" class="form-control" placeholder="Post Code">
+            <input type="number" class="form-control" placeholder="Post Code" formControlName="postCode">
           </div>
         </div>
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="bank-account-type" class="form-label">Bank Account Type</label>
-            <select class="form-select">
-              <option selected>Select</option>
+            <select class="form-select" formControlName="accountType">
+              <option selected disabled>Select</option>
               <option value="1">Personal</option>
               <option value="2">Company</option>
             </select>
           </div>
           <div class="col-lg-6">
             <label for="branch-name" class="form-label">Branch Name</label>
-            <input type="text" class="form-control" placeholder="Branch Name">
+            <input type="text" class="form-control" placeholder="Branch Name" formControlName="branchName">
           </div>
         </div>
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="branch-address" class="form-label">Branch Address</label>
-            <input type="text" class="form-control" placeholder="Branch Address">
+            <input type="text" class="form-control" placeholder="Branch Address" formControlName="branchAddress">
           </div>
           <div class="col-lg-6">
             <label for="date-of-birth" class="form-label">Date of Birth</label>
-            <input type="date" class="form-control" placeholder="Date of Birth">
+            <input type="date" class="form-control" placeholder="Date of Birth" formControlName="birthDate">
           </div>
         </div>
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="first-name" class="form-label">First Name</label>
-            <input type="text" class="form-control" placeholder="First Name">
+            <input type="text" class="form-control" placeholder="First Name" formControlName="firstName">
           </div>
           <div class="col-lg-6">
             <label for="last-name" class="form-label">Last Name</label>
-            <input type="text" class="form-control" placeholder="Last Name">
+            <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
           </div>
         </div>
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="account-name" class="form-label">Account Name</label>
-            <input type="text" class="form-control" placeholder="Account Name">
+            <input type="text" class="form-control" placeholder="Account Name" formControlName="accountName">
           </div>
           <div class="col-lg-6">
             <label for="address" class="form-label">Address</label>
-            <input type="text" class="form-control" placeholder="Address">
-          </div>
-        </div>
-        <div class="row my-3">
-          <div class="col-lg-6 mb-3">
-            <label for="account-name" class="form-label">Account Name</label>
-            <input type="text" class="form-control" placeholder="Account Name">
-          </div>
-          <div class="col-lg-6">
-            <label for="address" class="form-label">Address</label>
-            <input type="text" class="form-control" placeholder="Address">
+            <input type="text" class="form-control" placeholder="Address" formControlName="address">
           </div>
         </div>
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="Country" class="form-label">Country</label>
-            <input type="text" class="form-control" placeholder="Country">
+            <input type="text" class="form-control" placeholder="Country" formControlName="country">
           </div>
           <div class="col-lg-6">
             <label for="city" class="form-label">City & State/Province</label>
-            <input type="text" class="form-control" placeholder="City & State/Province">
+            <input type="text" class="form-control" placeholder="City & State/Province" formControlName="city">
           </div>
         </div>
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="phone-number" class="form-label">Phone Number</label>
-            <input type="number" class="form-control" placeholder="Phone Number">
+            <input type="number" class="form-control" placeholder="Phone Number" formControlName="phoneNumber">
           </div>
           <div class="col-lg-6">
             <label for="city" class="form-label">City & State/Province</label>
-            <input type="text" class="form-control" placeholder="City & State/Province">
+            <input type="text" class="form-control" placeholder="City & State/Province" formControlName="">
           </div>
         </div>
 
 
         <div class="my-2">
-          <button type="submit" class="btn btn-primary">Save</button>
-          <button type="submit" class="btn btn-primary">Close</button>
+          <button type="submit" class="btn btn-primary me-2">Save</button>
+          <button class="btn btn-primary mx-2">Close</button>
         </div>
       </form>
     </div>
+</div>
 
 
+
+ <div class="container">
     <div>
-      <form class="form-personal" action="" method="post">
+      <form [formGroup]="form" (ngSubmit)="submitCD()" class="form-card" method="post">
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="card-number" class="form-label">Card Numbers</label>
-            <input type="number" class="form-control" placeholder="Card Numbers">
+            <input type="number" class="form-control" placeholder="Card Numbers" formControlName="cardNumber">
           </div>
           <div class="col-lg-6">
             <label for="account-name" class="form-label">Account Name</label>
-            <input type="text" class="form-control" placeholder="Account Name">
+            <input type="text" class="form-control" placeholder="Account Name" formControlName="accountName">
           </div>
         </div>
         <div class="row my-3">
           <div class="col-lg-6 mb-3">
             <label for="CCV" class="form-label">CCV</label>
-            <input type="number" class="form-control" placeholder="CCV">
+            <input type="number" class="form-control" placeholder="CCV" formControlName="ccv">
           </div>
           <div class="col-lg-6">
             <label for="expiration-date" class="form-label">Expiration Date</label>
-            <input type="date" class="form-control" placeholder="Expiration Date">
+            <input type="date" class="form-control" placeholder="Expiration Date" formControlName="expirationDate">
           </div>
         </div>
         <div class="my-2">
-          <button type="submit" class="btn btn-primary">Save</button>
-          <button type="submit" class="btn btn-primary">Close</button>
+          <button type="submit" class="btn btn-primary me-2">Save</button>
+          <button class="btn btn-primary mx-2">Close</button>
         </div>
       </form>
     </div>
   </div>
 
   <!-- accordion form end -->
+
+
+  <div class="container">
+    <div>
+      <form [formGroup]="form" (ngSubmit)="submitMB()" class="form-mobile-banking" method="post">
+        <div class="row my-3">
+          <div class="col-lg-4 mb-3">
+            <label for="type" class="form-label">Type</label>
+            <select class="form-select" formControlName="type">
+              <option selected disabled>Select</option>
+              <option value="1">bKash</option>
+              <option value="2">Rocket</option>
+              <option value="2">Nagad</option>
+            </select>
+          </div>
+          <div class="col-lg-4">
+            <label for="account-name" class="form-label">Account Name</label>
+            <input type="text" class="form-control" placeholder="Account Name" formControlName="accountName">
+          </div>
+          <div class="col-lg-4">
+            <label for="account-number" class="form-label">Account Number</label>
+            <input type="number" class="form-control" placeholder="Account Number" formControlName="accountNumber">
+          </div>
+        </div>
+        <div class="my-2">
+          <button type="submit" class="btn btn-primary me-2">Save</button>
+          <button class="btn btn-primary mx-2">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>

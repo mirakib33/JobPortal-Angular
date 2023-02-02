@@ -1,5 +1,5 @@
 export class MobileBanking {
-    id!:number;
+    id!: number;
     type!: String;
     accountName!: String;
     accountNumber!: number;
