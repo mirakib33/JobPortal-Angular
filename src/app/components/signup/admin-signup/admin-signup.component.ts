@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminSignupService } from 'src/app/services/admin-signup.service';
+import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
   selector: 'app-admin-signup',
@@ -10,7 +11,7 @@ import { AdminSignupService } from 'src/app/services/admin-signup.service';
 })
 export class AdminSignupComponent {
 
-  constructor(private adminSignupService:AdminSignupService, private router: Router) { }
+  constructor(private signupService:SignupService, private router: Router) { }
 
   form!: FormGroup;
 
@@ -27,7 +28,7 @@ export class AdminSignupComponent {
   }
 
   submit(){
-    this.adminSignupService.save(this.form.value).subscribe((res:any) => {
+    this.signupService.save(this.form.value).subscribe((res:any) => {
       this.router.navigateByUrl('/admin-signup');
     })
   }

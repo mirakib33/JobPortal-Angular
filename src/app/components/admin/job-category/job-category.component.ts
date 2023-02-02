@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { JobCategory } from 'src/app/models/admin/job-category.model';
 import { JobCategoryService } from 'src/app/services/admin/job-category.service';
 import Swal from 'sweetalert2';
@@ -15,27 +15,23 @@ export class JobCategoryComponent implements OnInit {
   id!: number;
   jobCategory!: JobCategory[];
 
-  constructor(private jobCategoryService:JobCategoryService) { }
+  constructor(private formBuilder:FormBuilder, private jobCategoryService:JobCategoryService) { }
 
   ngOnInit(): void {
 
-    this.form = new FormGroup({
-      id: new FormControl(''),
-      categoryName: new FormControl(''),
+    this.form = this.formBuilder.group({
+      id: [''],
+      categoryName: ['']
     });
 
  
-
     this.jobCategoryService.getAll().subscribe((data: JobCategory[])=>{
       this.jobCategory = data;
     })
   }
 
   submit(){
-    this.jobCategoryService.save(this.form.value).subscribe((res:any) => {
-     })
-
-     this.ngOnInit();
+    this.jobCategoryService.save(this.form.value).subscribe(data=>{this.ngOnInit();})
    }
 
    update(){
@@ -43,7 +39,7 @@ export class JobCategoryComponent implements OnInit {
     })
   }
 
-  delete(id:number){
+  delete(jobCategory:JobCategory){
 
     Swal.fire({
       title: 'Are you sure?',
@@ -55,22 +51,28 @@ export class JobCategoryComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.jobCategoryService.delete(id).subscribe(res => {
-          this.jobCategory = this.jobCategory.filter(item => item.id !== id);
-     })
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
+        this.jobCategoryService.delete(jobCategory.id).subscribe(data=>{this.ngOnInit();})
+        Swal.fire({
+          icon: 'success',
+          title: 'Deleted!',
+          text: "Your file has been deleted!",
+          showConfirmButton: false,
+          timer: 1500
+        })
       }
     })
   }
 
-  setValue() {
-    this.form = new FormGroup({
-      categoryName: new FormControl(this.jobCategory)
-    });
+  setValue(jobCategory:JobCategory): void {
+    localStorage.setItem('getCatId', jobCategory.id.toString());
+    let catId = localStorage.getItem('getCatId');
+    
+    if(+catId! > 0){
+      this.jobCategoryService.find(+catId!).subscribe(data => {
+        this.form.patchValue(data);
+    })
+    }
+     
   }
 
 }
