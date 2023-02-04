@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { JobCategory } from 'src/app/models/admin/job-category.model';
 import { PerJobPost } from 'src/app/models/employer/per-job-post.model';
 import { JobCategoryService } from 'src/app/services/admin/job-category.service';
@@ -9,7 +9,7 @@ import { PerPostedJobsService } from 'src/app/services/employer/per-posted-jobs.
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   jobs: PerJobPost[] = [];
   jobCategory!: JobCategory[];

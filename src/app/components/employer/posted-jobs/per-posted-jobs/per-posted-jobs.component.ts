@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
   templateUrl: './per-posted-jobs.component.html',
   styleUrls: ['./per-posted-jobs.component.scss']
 })
-export class PerPostedJobsComponent  implements OnInit {
+export class PerPostedJobsComponent implements OnInit {
 
   jobs: PerJobPost[] = [];
 

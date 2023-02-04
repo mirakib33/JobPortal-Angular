@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PerJobCv } from 'src/app/models/employer/per-job-cv.model';
 import { PerJobPost } from 'src/app/models/employer/per-job-post.model';
+import { PerJobCvService } from 'src/app/services/employer/per-job-cv.service';
 import { PerJobPostService } from 'src/app/services/employer/per-job-post.service';
 
 @Component({
@@ -19,6 +21,7 @@ export class PerJobViewComponent {
   --------------------------------------------
   --------------------------------------------*/
   constructor(
+    private perJobCvService: PerJobCvService,
     public perJobPostService: PerJobPostService,
     private route: ActivatedRoute,
    ) { }
@@ -29,6 +32,26 @@ export class PerJobViewComponent {
     this.perJobPostService.find(this.id).subscribe((data: PerJobPost)=>{
       this.job = data;
     });
+  }
+
+  userId:number = 31;
+  jobId!: number;
+  perJobCv!:PerJobCv;
+  apply(job:PerJobPost){
+
+    this.jobId = job.per_jobpost_id;
+
+    this.perJobCv = {
+      userId: this.userId,
+      jobId: this.jobId,
+      status: false
+    }
+    
+
+    this.perJobCvService.save(this.perJobCv).subscribe(res=>{
+      
+    })
+    // alert('Apply')
   }
 
 }

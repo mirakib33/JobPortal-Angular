@@ -52,6 +52,8 @@ import { FreelanceJobComponent } from './components/job/freelance-job/freelance-
 import { PerJobViewComponent } from './components/job/per-job-view/per-job-view.component';
 import { AdminLoginComponent } from './components/login/admin-login/admin-login.component';
 import { AdminSignupComponent } from './components/signup/admin-signup/admin-signup.component';
+import { PerAppliedJobsComponent } from './components/applicant/applied-jobs/per-applied-jobs/per-applied-jobs.component';
+import { FreeAppliedJobsComponent } from './components/applicant/applied-jobs/free-applied-jobs/free-applied-jobs.component';
 
 const routes: Routes = [
   {
@@ -137,6 +139,14 @@ const routes: Routes = [
       {
         path : "payment-method",
         component : PaymentMethodComponent
+      },
+      {
+        path : "per-applied-jobs",
+        component : PerAppliedJobsComponent
+      },
+      {
+        path : "free-applied-jobs",
+        component : FreeAppliedJobsComponent
       },
       {
         path : "job-portal-cv",

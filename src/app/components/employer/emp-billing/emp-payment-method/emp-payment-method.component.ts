@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BankAccount } from 'src/app/models/payment-method/bank-account.model';
 import { CardDetails } from 'src/app/models/payment-method/card-details.model';
@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
   templateUrl: './emp-payment-method.component.html',
   styleUrls: ['./emp-payment-method.component.scss']
 })
-export class EmpPaymentMethodComponent {
+export class EmpPaymentMethodComponent implements OnInit {
 
   form!: FormGroup;
   id!: number;

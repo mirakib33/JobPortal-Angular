@@ -1,16 +1,17 @@
 <nav class="navbar border border-bottom-primary bg-white">
-  
-  <button
-    mat-icon-button
-    *ngIf="sidenav.mode === 'over'"
-    (click)="sidenav.toggle()"
-  >
-    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
-    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
-  </button>
-  
-  <a class="navbar-brand fw-bold text-success" routerLink="/">JOB PORTAL</a>
-  <button class="btn btn-primary">Home</button>
+  <div class="container">
+    <button
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    
+    <a class="navbar-brand fw-bold text-success" routerLink="/">JOB PORTAL</a>
+    <button class="btn btn-primary">Home</button>
+  </div>
 </nav>
 
 <mat-sidenav-container>

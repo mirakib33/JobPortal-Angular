@@ -1,16 +1,17 @@
 <nav class="navbar border border-bottom-primary bg-white">
-  
-  <button
-    mat-icon-button
-    *ngIf="sidenav.mode === 'over'"
-    (click)="sidenav.toggle()"
-  >
-    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
-    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
-  </button>
-  
-  <a class="navbar-brand fw-bold text-success ps-lg-4" routerLink="/">JOB PORTAL</a>
-  <button class="btn btn-primary">Home</button>
+  <div class="container">
+    <button
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    
+    <a class="navbar-brand fw-bold text-success ps-lg-4" routerLink="/">JOB PORTAL</a>
+    <button class="btn btn-primary">Home</button>
+  </div>
 </nav>
 
 <mat-sidenav-container>
@@ -142,6 +143,28 @@
       </li>
     </ul>
     <!-- Billing button end-->
+
+    <!-- applied jobs button -->
+    <button mat-button class="menu-button collapsed" data-bs-target="#applied_jobs" data-bs-toggle="collapse">
+      <i class='bi bi-coin'></i>
+      <span>Applied Jobs</span>
+      <i class="bi bi-chevron-down"></i>
+    </button>
+    <ul id="applied_jobs" class="nav-content collapse">
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/per-applied-jobs">
+          <i class="bi bi-arrow-right"></i>
+          <span>Permanent Jobs</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/free-applied-jobs">
+          <i class="bi bi-arrow-right"></i>
+          <span>Freelance Jobs</span>
+        </button>
+      </li>
+    </ul>
+    <!-- applied jobs button end-->
 
     <!-- View CV button -->
     <button mat-button class="menu-button collapsed" data-bs-target="#cv" data-bs-toggle="collapse">

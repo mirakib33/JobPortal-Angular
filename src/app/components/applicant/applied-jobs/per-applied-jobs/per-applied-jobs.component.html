@@ -1,0 +1,42 @@
+<!-- Posted job list start -->
+<div class="container">
+    <table class="table align-middle mb-0">
+        <thead class="bg-light">
+        <tr>
+            <th>Apply Date</th>
+            <th>Title</th>
+            <th>Company Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr> <!-- *ngFor="let job of jobs" -->
+            <td>
+            <div class="d-flex align-items-center">
+                <p class="mb-1">30/11/2022</p>
+            </div>
+            </td>
+            <td>
+                <p class="mb-1 job-title" [routerLink]="">Title</p>
+            </td>
+            <td>
+            <span class="">Company</span>
+            </td>
+            <td>
+              <span class="">Category</span>
+            </td>
+            <td>Status</td>
+            <td>
+                <div>
+                    <button [routerLink]="" type="button" class="btn btn-sm btn-outline-primary mb-1">View</button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Posted job list end -->
+
+

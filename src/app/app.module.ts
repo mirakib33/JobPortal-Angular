@@ -80,6 +80,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PerJobViewComponent } from './components/job/per-job-view/per-job-view.component';
 import { AdminLoginComponent } from './components/login/admin-login/admin-login.component';
 import { AdminSignupComponent } from './components/signup/admin-signup/admin-signup.component';
+import { FreeAppliedJobsComponent } from './components/applicant/applied-jobs/free-applied-jobs/free-applied-jobs.component';
+import { PerAppliedJobsComponent } from './components/applicant/applied-jobs/per-applied-jobs/per-applied-jobs.component';
 
 @NgModule({
   declarations: [
@@ -147,7 +149,9 @@ import { AdminSignupComponent } from './components/signup/admin-signup/admin-sig
     JobListComponent,
     PerJobViewComponent,
     AdminLoginComponent,
-    AdminSignupComponent
+    AdminSignupComponent,
+    FreeAppliedJobsComponent,
+    PerAppliedJobsComponent
   ],
   imports: [
     BrowserModule,
