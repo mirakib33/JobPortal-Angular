@@ -4,6 +4,7 @@ import { PerJobCv } from 'src/app/models/employer/per-job-cv.model';
 import { PerJobPost } from 'src/app/models/employer/per-job-post.model';
 import { PerJobCvService } from 'src/app/services/employer/per-job-cv.service';
 import { PerJobPostService } from 'src/app/services/employer/per-job-post.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-per-job-view',
@@ -24,6 +25,7 @@ export class PerJobViewComponent {
     private perJobCvService: PerJobCvService,
     public perJobPostService: PerJobPostService,
     private route: ActivatedRoute,
+    private router: Router
    ) { }
     
 
@@ -37,7 +39,31 @@ export class PerJobViewComponent {
   userId:number = 31;
   jobId!: number;
   perJobCv!:PerJobCv;
+
+
   apply(job:PerJobPost){
+
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, apply!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigateByUrl('/applicant/per-applied-jobs');
+          Swal.fire({
+            icon: 'success',
+            title: 'Applied!',
+            text: "Your application has been successfull.",
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      })
+    
 
     this.jobId = job.per_jobpost_id;
 
