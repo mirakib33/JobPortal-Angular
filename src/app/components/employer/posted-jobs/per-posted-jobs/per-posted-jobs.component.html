@@ -15,14 +15,14 @@
             <td>
             <div class="d-flex align-items-center">
                 <div>
-                <p class="mb-1">30/11/2022</p>
+                <p class="mb-1">{{ job.jobCategory }}</p>
                 <p class="mb-0"></p>
                 </div>
             </div>
             </td>
             <td>
             <p class="mb-1 job-title" [routerLink]="['/job/', job.per_jobpost_id, 'view']">{{ job.jobTitle }}</p>
-            <p class="mb-0">IT department</p>
+            <p class="mb-0">{{ job.jobCategory }}</p>
             </td>
             <td>
             <span class="">{{ job.employmentStatus }}</span>

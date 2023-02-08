@@ -107,7 +107,7 @@
                     <label for="category" class="form-label">Job Category</label>
                     <select [(ngModel)]="perJobPost.jobCategory" formControlName="jobCategory" class="form-select">
                         <option selected>Select</option>
-                        <option value="Male"  *ngFor="let category of jobCategory">{{ category.categoryName }}</option>
+                        <option value="Male"  *ngFor="let category of jobCategory" [value]="category.categoryName">{{ category.categoryName }}</option>
                     </select>
                 </div>
             </div>
