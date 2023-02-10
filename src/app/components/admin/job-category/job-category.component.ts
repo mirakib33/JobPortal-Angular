@@ -34,10 +34,10 @@ export class JobCategoryComponent implements OnInit {
     this.jobCategoryService.save(this.form.value).subscribe(data=>{this.ngOnInit();})
    }
 
-   update(){
-    this.jobCategoryService.update(this.id, this.form.value).subscribe((res:any) => {
-    })
-  }
+  //  update(){
+  //   this.jobCategoryService.update(this.id, this.form.value).subscribe((res:any) => {
+  //   })
+  // }
 
   delete(jobCategory:JobCategory){
 
