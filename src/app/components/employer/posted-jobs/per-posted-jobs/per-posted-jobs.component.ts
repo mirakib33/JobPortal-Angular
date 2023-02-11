@@ -10,18 +10,17 @@ import Swal from 'sweetalert2';
 })
 export class PerPostedJobsComponent implements OnInit {
 
-  jobs: PerJobPost[] = [];
+  jobs!: PerJobPost[];
 
   constructor(public perPostedJobsService: PerPostedJobsService) { }
 
   ngOnInit(): void {
     this.perPostedJobsService.getAll().subscribe((data: PerJobPost[])=>{
       this.jobs = data;
-      console.log(this.jobs);
     })  
   }
 
-  delete(id:number){
+  delete(perJobPost:PerJobPost){
 
     Swal.fire({
       title: 'Are you sure?',
@@ -33,9 +32,11 @@ export class PerPostedJobsComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.perPostedJobsService.delete(id).subscribe(res => {
-          this.jobs = this.jobs.filter(item => item.per_jobpost_id !== id);
-     })
+
+        this.perPostedJobsService.delete(perJobPost.per_jobpost_id).subscribe(data=>{this.ngOnInit();})
+    //     this.perPostedJobsService.delete(id).subscribe(res => {
+    //       this.jobs = this.jobs.filter(item => item.per_jobpost_id !== id);
+    //  })
         Swal.fire(
           'Deleted!',
           'Your file has been deleted.',

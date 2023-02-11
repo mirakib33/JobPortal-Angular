@@ -54,6 +54,15 @@ export class PerJobPostService {
     )
   }
 
+  getJobByUserId(userId:number): Observable<any> {
+  
+    return this.httpClient.get(this.url + '/per-job-cv/' + userId)
+  
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
   errorHandler(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
