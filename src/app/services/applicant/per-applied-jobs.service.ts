@@ -1,16 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { PerJobCv } from 'src/app/models/employer/per-job-cv.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PerJobCvService {
+export class PerAppliedJobsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private url = "http://localhost:8080";
+  private url = "http://localhost:8080/employer";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -18,17 +17,9 @@ export class PerJobCvService {
     })
   }
 
-  save(perJobCv:PerJobCv): Observable<any> {
+  getJobByUserId(userId:number): Observable<any> {
   
-    return this.httpClient.post(this.url + '/per-job-cv/', JSON.stringify(perJobCv), this.httpOptions)
-  
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
-
-  delete(id:number){
-    return this.httpClient.delete(this.url + '/per-job-cv/' + id, this.httpOptions)
+    return this.httpClient.get(this.url + '/per-job-cv/' + userId)
   
     .pipe(
       catchError(this.errorHandler)

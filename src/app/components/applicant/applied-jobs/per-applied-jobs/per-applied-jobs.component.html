@@ -12,10 +12,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let job of perJobs" [routerLink]="['/job/', job.per_jobpost_id, 'view']">
+        <tr *ngFor="let job of perAppliedJobs" [routerLink]="['/job/', job.per_jobpost_id, 'view']">
             <td>
             <div class="d-flex align-items-center">
-                <p class="mb-1">30/11/2022</p>
+                <p class="mb-1">{{ job.applyDate }}</p>
             </div>
             </td>
             <td>
@@ -27,7 +27,7 @@
             <td>
               <span class="">{{ job.jobCategory }}</span>
             </td>
-            <td [routerLink]="['/job/', job.per_jobpost_id, 'view']">Viewd</td>
+            <td>{{ job.status }}</td>
             <td>
                 <div>
                     <button [routerLink]="" type="button" class="btn btn-sm btn-outline-primary mb-1">Undo</button>

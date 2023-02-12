@@ -1,3 +1,5 @@
+// import { PerJobCv } from "./per-job-cv.model";
+
 export class PerJobPost {
     per_jobpost_id!:number;
     picture!: String;
@@ -20,4 +22,5 @@ export class PerJobPost {
     jobCategory!: String;
     userId!: number;
     cat_id!: number;
+    // perJobCv!: PerJobCv;
 }

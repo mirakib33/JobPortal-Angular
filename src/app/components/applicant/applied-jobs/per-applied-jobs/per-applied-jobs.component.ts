@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { PerAppliedJobs } from 'src/app/models/applicant/per-applied-jobs.model';
+import { PerJobCv } from 'src/app/models/employer/per-job-cv.model';
 import { PerJobPost } from 'src/app/models/employer/per-job-post.model';
+import { PerAppliedJobsService } from 'src/app/services/applicant/per-applied-jobs.service';
+import { PerJobCvService } from 'src/app/services/employer/per-job-cv.service';
 import { PerJobPostService } from 'src/app/services/employer/per-job-post.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-per-applied-jobs',
@@ -10,14 +15,39 @@ import { PerJobPostService } from 'src/app/services/employer/per-job-post.servic
 export class PerAppliedJobsComponent implements OnInit {
 
   userId: number = 10;
-  perJobs!: PerJobPost[];
+  perAppliedJobs!: PerAppliedJobs[];
 
-  constructor(private perJobPostService: PerJobPostService) { }
+  constructor(private perAppliedJobsService: PerAppliedJobsService, private perJobCvService: PerJobCvService) { }
 
   ngOnInit(): void {
-    this.perJobPostService.getJobByUserId(this.userId).subscribe((data: PerJobPost[])=>{
-      this.perJobs = data;
+    this.perAppliedJobsService.getJobByUserId(this.userId).subscribe((data: PerAppliedJobs[])=>{
+      this.perAppliedJobs = data;
     });
+  }
+
+
+  delete(perJobCv:PerJobCv){
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        // this.perJobCvService.delete(perJobCv).subscribe(data=>{this.ngOnInit();})
+
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
   }
 
 
