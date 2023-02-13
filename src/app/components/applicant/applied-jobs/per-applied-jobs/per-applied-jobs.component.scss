@@ -1,0 +1,17 @@
+
+.job-title{
+    color: #0d6efd;
+  }
+  
+  .job-title:hover {
+    color: #73a3eb;
+    cursor: pointer;
+  }
+  
+  table tbody tr:hover {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+  
+  button {
+    width: 60px;
+  }
