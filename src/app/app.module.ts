@@ -82,6 +82,8 @@ import { AdminLoginComponent } from './components/login/admin-login/admin-login.
 import { AdminSignupComponent } from './components/signup/admin-signup/admin-signup.component';
 import { FreeAppliedJobsComponent } from './components/applicant/applied-jobs/free-applied-jobs/free-applied-jobs.component';
 import { PerAppliedJobsComponent } from './components/applicant/applied-jobs/per-applied-jobs/per-applied-jobs.component';
+import { PerjobCvViewComponent } from './components/employer/cv-bank/perjob-cv-view/perjob-cv-view.component';
+import { FreejobCvViewComponent } from './components/employer/cv-bank/freejob-cv-view/freejob-cv-view.component';
 
 @NgModule({
   declarations: [
@@ -151,7 +153,9 @@ import { PerAppliedJobsComponent } from './components/applicant/applied-jobs/per
     AdminLoginComponent,
     AdminSignupComponent,
     FreeAppliedJobsComponent,
-    PerAppliedJobsComponent
+    PerAppliedJobsComponent,
+    PerjobCvViewComponent,
+    FreejobCvViewComponent
   ],
   imports: [
     BrowserModule,

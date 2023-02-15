@@ -54,6 +54,7 @@ import { AdminLoginComponent } from './components/login/admin-login/admin-login.
 import { AdminSignupComponent } from './components/signup/admin-signup/admin-signup.component';
 import { PerAppliedJobsComponent } from './components/applicant/applied-jobs/per-applied-jobs/per-applied-jobs.component';
 import { FreeAppliedJobsComponent } from './components/applicant/applied-jobs/free-applied-jobs/free-applied-jobs.component';
+import { PerjobCvViewComponent } from './components/employer/cv-bank/perjob-cv-view/perjob-cv-view.component';
 
 const routes: Routes = [
   {
@@ -155,6 +156,10 @@ const routes: Routes = [
       {
         path : "personal-cv",
         component : PersonalCvComponent
+      },
+      {
+        path : "cv/:jobId",
+        component : PerjobCvViewComponent
       }
 
     ]

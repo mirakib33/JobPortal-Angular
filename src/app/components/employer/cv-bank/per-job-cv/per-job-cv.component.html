@@ -29,10 +29,7 @@
             <td>Senior</td>
             <td>
                 <div>
-                    <button [routerLink]="['/employer/per-job-post/', job.per_jobpost_id]" type="button" class="btn btn-sm btn-outline-primary mb-1">Edit</button>
-                </div>
-                <div>
-                    <button (click)="delete(job.per_jobpost_id)" type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                    <button [routerLink]="['/applicant/cv/', job.per_jobpost_id]" type="button" class="btn btn-sm btn-outline-primary mb-1">CV List</button>
                 </div>
             </td>
         </tr>

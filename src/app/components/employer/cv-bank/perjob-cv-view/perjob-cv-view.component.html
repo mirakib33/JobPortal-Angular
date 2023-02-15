@@ -1,0 +1,38 @@
+<!-- Permanent job cv list start -->
+<div class="container">
+    <table class="table align-middle mb-0">
+        <thead class="bg-light">
+        <tr>
+            <th>Apply Date</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let info of accountInfo">
+            <td>
+            <div class="d-flex align-items-center">
+                <p class="mb-1">02-15-2023</p>
+            </div>
+            </td>
+            <td>   <!-- [routerLink]="['/job/', job.per_jobpost_id, 'view']" -->
+                <p class="mb-1 job-title">{{ info.firstName }} {{ info.lastName }}</p> 
+            </td>
+            <td>
+            <span class="">{{ info.email }}</span>
+            </td>
+            <td>
+              <span class="">{{ info.phone }}</span>
+            </td>
+            <td>
+                <div>
+                    <button [routerLink]="" type="button" class="btn btn-sm btn-outline-primary mb-1">Download CV</button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Permanent job cv list end -->
