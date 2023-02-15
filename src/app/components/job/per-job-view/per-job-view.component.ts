@@ -36,7 +36,7 @@ export class PerJobViewComponent {
     });
   }
 
-  userId:number = 10;
+  userId:number = 31;
   jobId!: number;
   perJobCv!:PerJobCv;
 

@@ -45,6 +45,15 @@ export class AccountInfoService {
     )
   }
 
+  getAppByJobId(id:number): Observable<any> {
+  
+    return this.httpClient.get(this.url + '/account-info/' + id)
+  
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
   errorHandler(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
