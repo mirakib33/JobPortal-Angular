@@ -28,6 +28,7 @@ export class PerJobCvService {
   }
 
   delete(id:number){
+    console.log(id);
     return this.httpClient.delete(this.url + '/per-job-cv/' + id, this.httpOptions)
   
     .pipe(

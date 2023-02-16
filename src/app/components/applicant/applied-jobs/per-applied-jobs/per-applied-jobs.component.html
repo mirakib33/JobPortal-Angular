@@ -30,7 +30,7 @@
             <td>{{ job.status }}</td>
             <td>
                 <div>
-                    <button [routerLink]="" type="button" class="btn btn-sm btn-outline-primary mb-1">Undo</button>
+                    <button (click)="delete(job)" type="button" class="btn btn-sm btn-outline-primary mb-1">Undo</button>
                 </div>
             </td>
         </tr>

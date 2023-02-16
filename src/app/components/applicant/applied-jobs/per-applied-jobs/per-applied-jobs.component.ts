@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class PerAppliedJobsComponent implements OnInit {
 
-  userId: number = 10;
+  userId: number = 31;
   perAppliedJobs!: PerAppliedJobs[];
 
   constructor(private perAppliedJobsService: PerAppliedJobsService, private perJobCvService: PerJobCvService) { }
@@ -22,28 +22,31 @@ export class PerAppliedJobsComponent implements OnInit {
   ngOnInit(): void {
     this.perAppliedJobsService.getJobByUserId(this.userId).subscribe((data: PerAppliedJobs[])=>{
       this.perAppliedJobs = data;
+      console.log('De;List Data-',this.perAppliedJobs);
+
     });
   }
 
 
-  delete(perJobCv:PerJobCv){
+  delete(perAppliedJobs:PerAppliedJobs){
 
     Swal.fire({
       title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      text: "You need to apply again to revert this!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Yes, undo it!'
     }).then((result) => {
       if (result.isConfirmed) {
 
-        // this.perJobCvService.delete(perJobCv).subscribe(data=>{this.ngOnInit();})
+        console.log('De;edfhnsdhn-',perAppliedJobs);
+        this.perJobCvService.delete(perAppliedJobs.perjob_cv_id).subscribe(data=>{this.ngOnInit();})
 
         Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
+          'Undo Completed!',
+          'Your job has been undone.',
           'success'
         )
       }

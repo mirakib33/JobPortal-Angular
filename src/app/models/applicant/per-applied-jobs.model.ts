@@ -5,4 +5,5 @@ export class PerAppliedJobs {
     jobCategory!: String;
     status!: boolean;
     applyDate!: String;
+    perjob_cv_id!:number;
 }
