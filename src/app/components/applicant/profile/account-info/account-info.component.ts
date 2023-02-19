@@ -56,7 +56,7 @@ export class AccountInfoComponent implements OnInit {
       firstName: '',
       lastName: '',
       email: '',
-      phone: 0,
+      phone: '',
       password: '',
     }
 

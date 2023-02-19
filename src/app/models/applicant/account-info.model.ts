@@ -3,6 +3,6 @@ export class AccountInfo {
     firstName!: String;
     lastName!: String;
     email!: String;
-    phone!: number;
+    phone!: String;
     password!: String;
 }

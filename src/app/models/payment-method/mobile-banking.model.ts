@@ -2,6 +2,6 @@ export class MobileBanking {
     id!: number;
     type!: String;
     accountName!: String;
-    accountNumber!: number;
+    accountNumber!: String;
     userId!: number;
 }
