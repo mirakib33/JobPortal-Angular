@@ -22,13 +22,15 @@
                     <p class="text-center small">Enter your email or phone & password to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+                  <form (ngSubmit)="login()" class="row g-3 needs-validation">
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Email or Phone</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-person"></i></span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input type="text" name="username" class="form-control" id="yourUsername" formControlName="email" required>
                         <div class="invalid-feedback">Please enter your email or phone.</div>
                       </div>
                     </div>
@@ -38,7 +40,7 @@
                       <a href="" class="float-end">Forgot Password</a>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-lock"></i></span>
-                        <input type="password" name="password" class="form-control" id="yourPassword" required>
+                        <input type="password" name="password" class="form-control" id="yourPassword" formControlName="password" required>
                         <div class="invalid-feedback">Please enter your password!</div>
                       </div>
                     </div>
