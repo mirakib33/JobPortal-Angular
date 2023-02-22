@@ -174,7 +174,8 @@ import { FreejobCvViewComponent } from './components/employer/cv-bank/freejob-cv
     MatTabsModule,
     MatExpansionModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
