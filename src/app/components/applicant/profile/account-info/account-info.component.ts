@@ -1,3 +1,5 @@
+import { LoginService } from './../../../../services/login.service';
+import { Users } from './../../../../models/admin/users.model';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -44,12 +46,17 @@ export class AccountInfoComponent implements OnInit {
 
   // show hide action
 
+ 
+
 
   form!: FormGroup;
-  id: number = 3;
+  id: number = this.loginService.token().user_id;
   accountInfo!: AccountInfo;
 
-  constructor(private accountInfoService: AccountInfoService, private router: Router) {
+  constructor(
+    
+    private loginService:LoginService,
+    private accountInfoService: AccountInfoService, private router: Router) {
 
     this.accountInfo = {
       id:0,
@@ -75,7 +82,6 @@ export class AccountInfoComponent implements OnInit {
     this.accountInfoService.find(this.id).subscribe((data: AccountInfo)=>{
       this.accountInfo = data;
     });
-
   }
 
   

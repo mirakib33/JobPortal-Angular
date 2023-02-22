@@ -1,3 +1,4 @@
+import { LoginService } from './../../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Emitter } from 'src/app/auth/emitter';
 
@@ -9,11 +10,15 @@ import { Emitter } from 'src/app/auth/emitter';
 export class HeaderComponent implements OnInit {
 
   isLoggedIn = false ;
-  constructor() { }
+  constructor(private loginService: LoginService) { }
   ngOnInit(): void {
     Emitter.authEmitter.subscribe(res=>{
       this.isLoggedIn = res
     })
+  }
+
+  logout() {
+    this.loginService.logout();
   }
 
 }

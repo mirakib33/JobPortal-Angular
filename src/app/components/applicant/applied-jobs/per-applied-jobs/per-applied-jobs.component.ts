@@ -1,3 +1,4 @@
+import { LoginService } from './../../../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { PerAppliedJobs } from 'src/app/models/applicant/per-applied-jobs.model';
 import { PerJobCv } from 'src/app/models/employer/per-job-cv.model';
@@ -14,10 +15,10 @@ import Swal from 'sweetalert2';
 })
 export class PerAppliedJobsComponent implements OnInit {
 
-  userId: number = 31;
+  userId: number = this.loginService.token().user_id;
   perAppliedJobs!: PerAppliedJobs[];
 
-  constructor(private perAppliedJobsService: PerAppliedJobsService, private perJobCvService: PerJobCvService) { }
+  constructor(private perAppliedJobsService: PerAppliedJobsService, private loginService: LoginService, private perJobCvService: PerJobCvService) { }
 
   ngOnInit(): void {
     this.perAppliedJobsService.getJobByUserId(this.userId).subscribe((data: PerAppliedJobs[])=>{

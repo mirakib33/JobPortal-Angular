@@ -21,9 +21,28 @@ export class LoginService {
     })
   }
 
-  login(email:string,password:string):Observable<any>{
-    return this.http.post(this.url + '/login',{email,password})
-    console.log(email);
+  token(){
+    const token = localStorage.getItem("token");
+    return JSON.parse(token!).body;
+  }
+
+
+  login(signup:Signup){
+    return this.http.post(this.url + '/login',signup,{observe:'response'})
+    .subscribe((data) => {
+      if(data) {
+        localStorage.setItem('token', JSON.stringify(data));
+        this.router.navigate(['/']);
+        const tok = localStorage.getItem("token");
+        this.invalidUserAuth.emit(false);
+      } else{
+        this.invalidUserAuth.emit(true);
+      }
+    })
+  }
+
+  logout(){
+    localStorage.removeItem('token');
   }
 
 

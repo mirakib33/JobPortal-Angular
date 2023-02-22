@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   form!: FormGroup;
-  message = '';
+  authError: String = '';
 
   constructor(private formBuilder:FormBuilder, private loginService: LoginService, private router: Router) { }
 
@@ -24,16 +24,8 @@ export class LoginComponent implements OnInit {
 
   }
 
-  login() {
-    const formValue = this.form.value
-    this.loginService.login(formValue.email, formValue.password).subscribe({next: (res) => {
-      console.log(res)
-      localStorage.setItem('token',res.token)
-      console.log(res.token)
-      this.router.navigate(['/'])
-    },error : (err)=>{
-      this.message='Wrong username or password!!'
-    }})
+  login(signup:Signup) {
+    this.loginService.login(signup);
   }
 
 }

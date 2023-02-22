@@ -1,3 +1,4 @@
+import { LoginService } from './../../../services/login.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PerJobCv } from 'src/app/models/employer/per-job-cv.model';
@@ -22,6 +23,7 @@ export class PerJobViewComponent {
   --------------------------------------------
   --------------------------------------------*/
   constructor(
+    private loginService: LoginService,
     private perJobCvService: PerJobCvService,
     public perJobPostService: PerJobPostService,
     private route: ActivatedRoute,
@@ -36,7 +38,7 @@ export class PerJobViewComponent {
     });
   }
 
-  userId:number = 31;
+  userId:number = this.loginService.token().user_id;
   jobId!: number;
   perJobCv!:PerJobCv;
 
