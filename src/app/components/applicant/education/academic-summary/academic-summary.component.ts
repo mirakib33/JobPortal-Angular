@@ -1,4 +1,3 @@
-import { LoginService } from './../../../../services/login.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -13,11 +12,11 @@ import { AcademicSummaryService } from 'src/app/services/applicant/academic-summ
 export class AcademicSummaryComponent {
 
   form!: FormGroup;
-  id: number = this.loginService.token().user_id;
-  userId: number = this.loginService.token().user_id;
+  id: number = 33;
+  userId: number = 2;
   academicSummary: AcademicSummary;
   academicSummaries: AcademicSummary[] = [];
-  constructor(private academicSummaryService:AcademicSummaryService, private loginService:LoginService, private router: Router) { 
+  constructor(private academicSummaryService:AcademicSummaryService, private router: Router) { 
 
     this.academicSummary = {
       id:0,

@@ -12,6 +12,6 @@ export class BankAccount {
     address!: String;
     country!: String;
     city!: String;
-    phoneNumber!: String;
+    phoneNumber!: number;
     userId!: number;
 }

@@ -2,7 +2,7 @@ export class AdminSignup {
     firstName!: String;
     lastName!: String;
     email!: String;
-    phone!: String;
+    phone!: number;
     password!: String;
     userAgreement!: boolean;
 }

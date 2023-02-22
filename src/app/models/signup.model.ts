@@ -2,7 +2,7 @@ export class Signup {
     firstName!: String;
     lastName!: String;
     email!: String;
-    phone!: String;
+    phone!: number;
     password!: String;
     userType!: String;
     userAgreement!: boolean;

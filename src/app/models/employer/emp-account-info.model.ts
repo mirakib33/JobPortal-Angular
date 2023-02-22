@@ -3,7 +3,7 @@ export class EmpAccountInfo {
     firstName!: String;
     lastName!: String;
     email!: String;
-    phone!: String;
+    phone!: number;
     companyName!: String;
     designation!: String;
     department!: String;

@@ -21,7 +21,7 @@
 				</div>
 				<div class="col-lg-6">
 					<label for="phone" class="form-label">Phone</label> <input formControlName="phone"
-						type="text" class="form-control" placeholder="Phone" id="phone">
+						type="number" class="form-control" placeholder="Phone" id="phone">
 				</div>
 			</div>
 			<div class="row my-3">
@@ -64,8 +64,6 @@
 					Already have an account? <span><a routerLink="/login">Log In</a></span>
 				</p>
 			</div>
-			<div *ngIf="success" style="color: green;">Registration Successful.</div>
-    <p *ngIf="errMessage" class="alert alert-danger alert-dismissible fade show">{{errMessage}}</p>
 		</form>
 	</div>
 </div>

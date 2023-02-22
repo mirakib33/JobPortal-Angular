@@ -57,7 +57,7 @@ export class EmpAccountInfoComponent {
       firstName: '',
       lastName: '',
       email: '',
-      phone: '',
+      phone: 0,
       companyName: '',
       designation: '',
       department: '',

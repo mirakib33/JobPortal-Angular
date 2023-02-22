@@ -1,5 +1,3 @@
-import { LoginService } from './../../../../services/login.service';
-import { Users } from './../../../../models/admin/users.model';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -46,24 +44,19 @@ export class AccountInfoComponent implements OnInit {
 
   // show hide action
 
- 
-
 
   form!: FormGroup;
-  id: number = this.loginService.token().user_id;
+  id: number = 33;
   accountInfo!: AccountInfo;
 
-  constructor(
-    
-    private loginService:LoginService,
-    private accountInfoService: AccountInfoService, private router: Router) {
+  constructor(private accountInfoService: AccountInfoService, private router: Router) {
 
     this.accountInfo = {
       id:0,
       firstName: '',
       lastName: '',
       email: '',
-      phone: '',
+      phone: 0,
       password: '',
     }
 
@@ -71,7 +64,7 @@ export class AccountInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      id: new FormControl(3),
+      id: new FormControl(33),
       firstName: new FormControl(''),
       lastName: new FormControl(''),
       email: new FormControl(''),
@@ -82,6 +75,7 @@ export class AccountInfoComponent implements OnInit {
     this.accountInfoService.find(this.id).subscribe((data: AccountInfo)=>{
       this.accountInfo = data;
     });
+
   }
 
   
@@ -91,7 +85,7 @@ setValue(){
    this.dataOC = false;
    this.passOC = false;
    this.form = new FormGroup({
-      id: new FormControl(3),
+      id: new FormControl(33),
       firstName: new FormControl(this.accountInfo.firstName),
       lastName: new FormControl(this.accountInfo.lastName),
       email: new FormControl(this.accountInfo.email),
