@@ -46,7 +46,7 @@ export class AccountInfoComponent implements OnInit {
 
 
   form!: FormGroup;
-  id: number = 33;
+  id: number = 3;
   accountInfo!: AccountInfo;
 
   constructor(private accountInfoService: AccountInfoService, private router: Router) {
@@ -64,7 +64,7 @@ export class AccountInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      id: new FormControl(33),
+      id: new FormControl(3),
       firstName: new FormControl(''),
       lastName: new FormControl(''),
       email: new FormControl(''),
@@ -85,7 +85,7 @@ setValue(){
    this.dataOC = false;
    this.passOC = false;
    this.form = new FormGroup({
-      id: new FormControl(33),
+      id: new FormControl(3),
       firstName: new FormControl(this.accountInfo.firstName),
       lastName: new FormControl(this.accountInfo.lastName),
       email: new FormControl(this.accountInfo.email),

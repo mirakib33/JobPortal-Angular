@@ -64,6 +64,8 @@
 					Already have an account? <span><a routerLink="/login">Log In</a></span>
 				</p>
 			</div>
+			<div *ngIf="success" style="color: green;">Registration Successful.</div>
+    <p *ngIf="errMessage" class="alert alert-danger alert-dismissible fade show">{{errMessage}}</p>
 		</form>
 	</div>
 </div>

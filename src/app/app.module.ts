@@ -76,7 +76,7 @@ import { UsersComponent } from './components/admin/users/users.component';
 import { JobCategoryComponent } from './components/admin/job-category/job-category.component';
 import { JobListComponent } from './components/admin/job-list/job-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PerJobViewComponent } from './components/job/per-job-view/per-job-view.component';
 import { AdminLoginComponent } from './components/login/admin-login/admin-login.component';
 import { AdminSignupComponent } from './components/signup/admin-signup/admin-signup.component';
@@ -84,6 +84,7 @@ import { FreeAppliedJobsComponent } from './components/applicant/applied-jobs/fr
 import { PerAppliedJobsComponent } from './components/applicant/applied-jobs/per-applied-jobs/per-applied-jobs.component';
 import { PerjobCvViewComponent } from './components/employer/cv-bank/perjob-cv-view/perjob-cv-view.component';
 import { FreejobCvViewComponent } from './components/employer/cv-bank/freejob-cv-view/freejob-cv-view.component';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -174,7 +175,9 @@ import { FreejobCvViewComponent } from './components/employer/cv-bank/freejob-cv
     MatTabsModule,
     MatExpansionModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

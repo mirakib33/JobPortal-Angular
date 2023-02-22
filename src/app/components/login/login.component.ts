@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { LoginService } from './../../services/login.service';
 import { Signup } from './../../models/signup.model';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,36 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  signup: Signup = new Signup();
-  errorMessage!: string;
+  form!: FormGroup;
+  message = '';
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private formBuilder:FormBuilder, private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      email: [''],
+      password: ['']
+  });
+
   }
 
   login() {
-    this.loginService.login(this.signup).subscribe(
-      (signup) => {
-        switch (signup.userType) {
-          case 'Admin':
-            this.router.navigate(['/admin']);
-            break;
-          case 'Employer':
-            this.router.navigate(['/employer']);
-            break;
-          case 'Applicant':
-            this.router.navigate(['/applicant']);
-            break;
-          default:
-            this.errorMessage = 'Invalid user role';
-            break;
-        }
-      },
-      (error) => {
-        this.errorMessage = 'Invalid username or password';
-      }
-    );
+    const formValue = this.form.value
+    this.loginService.login(formValue.email, formValue.password).subscribe({next: (res) => {
+      console.log(res)
+      localStorage.setItem('token',res.token)
+      console.log(res.token)
+      this.router.navigate(['/'])
+    },error : (err)=>{
+      this.message='Wrong username or password!!'
+    }})
   }
 
 }

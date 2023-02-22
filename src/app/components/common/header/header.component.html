@@ -20,7 +20,7 @@
                 <li class="nav-item"><a class="nav-link active" href="#">Link</a>
                 </li>
             </ul>
-            <ul class="navbar-nav mb-2 mb-lg-0">
+            <ul *ngIf="!isLoggedIn" class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item me-2 mb-2 mb-lg-0">
                     <a routerLink="/login"><button class="btn btn-outline-success btn-sm" type="submit">Log In</button></a>
                 </li>
