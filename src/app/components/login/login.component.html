@@ -8,7 +8,6 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a routerLink="/" class="logo d-flex align-items-center w-auto">
-                  <img src="logo" alt="">
                   <span class="d-none d-lg-block">Job Portal</span>
                 </a>
               </div><!-- End Logo -->
@@ -22,14 +21,24 @@
                     <p class="text-center small">Enter your email or phone & password to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form class="row g-3 needs-validation" *ngIf="!isLoggedIn"
+                  name="form"
+                  (ngSubmit)="f.form.valid && onSubmit()"
+                  #f="ngForm"
+                  novalidate>
 
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label">Email or Phone</label>
+                      <label for="emailOrPhone" class="form-label">Email or Phone</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-person"></i></span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please enter your email or phone.</div>
+                        <input type="text" name="emailOrPhone" class="form-control" id="emailOrPhone" name="emailOrPhone"
+                        [(ngModel)]="form.email"
+                        required
+                        #emailOrPhone="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && emailOrPhone.errors }">
+                        <div *ngIf="emailOrPhone.errors && f.submitted" class="invalid-feedback">
+                          Username is required!
+                        </div>
                       </div>
                     </div>
 
@@ -38,8 +47,17 @@
                       <a href="" class="float-end">Forgot Password</a>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-lock"></i></span>
-                        <input type="password" name="password" class="form-control" id="yourPassword" required>
-                        <div class="invalid-feedback">Please enter your password!</div>
+                        <input type="password" name="password" class="form-control" id="yourPassword" [(ngModel)]="form.password"
+                        required
+                        minlength="4"
+                        #password="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+                        <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+                          <div *ngIf="password.errors['required']">Password is required</div>
+                          <div *ngIf="password.errors['minlength']">
+                            Password must be at least 6 characters
+                          </div>
+                        </div>
                       </div>
                     </div>
 

@@ -1,3 +1,5 @@
+import { Role } from "./role.model";
+
 export class Signup {
     firstName!: String;
     lastName!: String;
@@ -6,4 +8,5 @@ export class Signup {
     password!: String;
     userType!: String;
     userAgreement!: boolean;
+    role!: Role[];
 }

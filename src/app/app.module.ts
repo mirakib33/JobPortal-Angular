@@ -84,6 +84,7 @@ import { FreeAppliedJobsComponent } from './components/applicant/applied-jobs/fr
 import { PerAppliedJobsComponent } from './components/applicant/applied-jobs/per-applied-jobs/per-applied-jobs.component';
 import { PerjobCvViewComponent } from './components/employer/cv-bank/perjob-cv-view/perjob-cv-view.component';
 import { FreejobCvViewComponent } from './components/employer/cv-bank/freejob-cv-view/freejob-cv-view.component';
+import { authInterceptorProviders } from './auth/helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -175,6 +176,7 @@ import { FreejobCvViewComponent } from './components/employer/cv-bank/freejob-cv
     MatExpansionModule
   ],
   providers: [
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
