@@ -28,26 +28,26 @@
                   novalidate>
 
                     <div class="col-12">
-                      <label for="emailOrPhone" class="form-label">Email or Phone</label>
+                      <label for="email" class="form-label">Email or Phone</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-person"></i></span>
-                        <input type="text" name="emailOrPhone" class="form-control" id="emailOrPhone" name="emailOrPhone"
+                        <input type="text" name="email" class="form-control" id="email" name="email"
                         [(ngModel)]="form.email"
                         required
-                        #emailOrPhone="ngModel"
-                        [ngClass]="{ 'is-invalid': f.submitted && emailOrPhone.errors }">
-                        <div *ngIf="emailOrPhone.errors && f.submitted" class="invalid-feedback">
+                        #email="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && email.errors }">
+                        <div *ngIf="email.errors && f.submitted" class="invalid-feedback">
                           Username is required!
                         </div>
                       </div>
                     </div>
 
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label">Password</label>
+                      <label for="password" class="form-label">Password</label>
                       <a href="" class="float-end">Forgot Password</a>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-lock"></i></span>
-                        <input type="password" name="password" class="form-control" id="yourPassword" [(ngModel)]="form.password"
+                        <input type="password" name="password" class="form-control" id="password" [(ngModel)]="form.password"
                         required
                         minlength="4"
                         #password="ngModel"

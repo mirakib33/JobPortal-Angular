@@ -35,15 +35,17 @@ export class SignupComponent implements OnInit {
 
   onSubmit(): void {
 
+    const roles = this.form.value.role.map((roleName: string) => ({ roleName }));
+
     const signup: Signup = {
-      firstName: this.form.controls['firstName'].value,
-      lastName: this.form.controls['lastName'].value,
-      email: this.form.controls['email'].value,
-      phone: this.form.controls['phone'].value,
-      password: this.form.controls['password'].value,
-      userType: this.form.controls['userType'].value,
-      userAgreement: this.form.controls['userAgreement'].value,
-      role: this.form.controls['role'].value.map((r: any) => ({ roleName: r }))
+      firstName: this.form.value['firstName'],
+      lastName: this.form.value['lastName'],
+      email: this.form.value['email'],
+      phone: this.form.value['phone'],
+      password: this.form.value['password'],
+      userType: this.form.value['userType'],
+      userAgreement: this.form.value['userAgreement'],
+      role: roles
     };
 
     this.authService.register(signup).subscribe({
