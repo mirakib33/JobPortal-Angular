@@ -28,15 +28,15 @@
                   novalidate>
 
                     <div class="col-12">
-                      <label for="email" class="form-label">Email or Phone</label>
+                      <label for="emailOrPhone" class="form-label">Email or Phone</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-person"></i></span>
-                        <input type="text" name="email" class="form-control" id="email" name="email"
-                        [(ngModel)]="form.email"
+                        <input type="text" name="emailOrPhone" class="form-control" id="emailOrPhone"
+                        [(ngModel)]="form.emailOrPhone"
                         required
-                        #email="ngModel"
-                        [ngClass]="{ 'is-invalid': f.submitted && email.errors }">
-                        <div *ngIf="email.errors && f.submitted" class="invalid-feedback">
+                        #emailOrPhone="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && emailOrPhone.errors }">
+                        <div *ngIf="emailOrPhone.errors && f.submitted" class="invalid-feedback">
                           Username is required!
                         </div>
                       </div>
