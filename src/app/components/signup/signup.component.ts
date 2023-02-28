@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
     });
 
   }
-  roles: Role []= []
+  roles: Role []= [];
 
   onSubmit(): void {
     console.log(this.form.value);
