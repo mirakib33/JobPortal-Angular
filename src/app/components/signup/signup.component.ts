@@ -1,3 +1,4 @@
+import { Role } from './../../models/role.model';
 import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -27,15 +28,15 @@ export class SignupComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       userType: ['', Validators.required],
       userAgreement: [false, Validators.requiredTrue],
-      role: [[]]
+      role: []
     });
 
   }
-
+  roles: Role []= []
 
   onSubmit(): void {
-
-    const roles = this.form.value.role.map((roleName: string) => ({ roleName }));
+    console.log(this.form.value);
+    this.roles.push({roleName:this.form.value.role})
 
     const signup: Signup = {
       firstName: this.form.value['firstName'],
@@ -45,7 +46,7 @@ export class SignupComponent implements OnInit {
       password: this.form.value['password'],
       userType: this.form.value['userType'],
       userAgreement: this.form.value['userAgreement'],
-      role: roles
+      role: this.roles
     };
 
     this.authService.register(signup).subscribe({
