@@ -1,3 +1,4 @@
+import { TokenStorageService } from 'src/app/auth/services/token-storage.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,11 +13,11 @@ import { AcademicSummaryService } from 'src/app/services/applicant/academic-summ
 export class AcademicSummaryComponent {
 
   form!: FormGroup;
-  id: number = 33;
+  id: number = this.tokenStorageService.getUser().user.user_id;
   userId: number = 2;
   academicSummary: AcademicSummary;
   academicSummaries: AcademicSummary[] = [];
-  constructor(private academicSummaryService:AcademicSummaryService, private router: Router) { 
+  constructor(private academicSummaryService:AcademicSummaryService, private router: Router, private tokenStorageService:TokenStorageService) { 
 
     this.academicSummary = {
       id:0,
