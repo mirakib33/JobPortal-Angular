@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JobCategory } from 'src/app/models/admin/job-category.model';
 import { PerJobPost } from 'src/app/models/employer/per-job-post.model';
-import { JobCategoryService } from 'src/app/services/admin/job-category.service';
 import { PerPostedJobsService } from 'src/app/services/employer/per-posted-jobs.service';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -14,14 +14,14 @@ export class HomeComponent implements OnInit {
   jobs: PerJobPost[] = [];
   jobCategory!: JobCategory[];
 
-  constructor(public perPostedJobsService: PerPostedJobsService, private jobCategoryService:JobCategoryService) { }
+  constructor(public perPostedJobsService: PerPostedJobsService, private homeService:HomeService) { }
 
   ngOnInit(): void {
     this.perPostedJobsService.getAll().subscribe((data: PerJobPost[])=>{
       this.jobs = data;
     })
 
-    this.jobCategoryService.getAll().subscribe((data: JobCategory[])=>{
+    this.homeService.getAll().subscribe((data: JobCategory[])=>{
       this.jobCategory = data;
     })
 
