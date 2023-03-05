@@ -14,7 +14,8 @@ export class JobCategoryService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      // 'Authorization': "Bearer "+ "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJleHAiOjE2NzgwNTI1MTQsImlhdCI6MTY3ODAzNDUxNH0.EMhefdZ5jFeHz6EN-J3J0AF0A5aAh4mJrFIEXBPazGiTbfPnu6mrPC8DUtgjlhxLAev11N7NZXPkl9ywvdGoIA"
     })
   }
 
@@ -29,7 +30,7 @@ export class JobCategoryService {
 
   getAll(): Observable<any> {
   
-    return this.httpClient.get(this.url + '/job-category/')
+    return this.httpClient.get(this.url + '/job-category/',  this.httpOptions)
   
     .pipe(
       catchError(this.errorHandler)

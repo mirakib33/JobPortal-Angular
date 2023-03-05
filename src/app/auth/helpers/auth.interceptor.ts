@@ -23,7 +23,9 @@ export class AuthInterceptor implements HttpInterceptor {
     if (this.tokenStorageService.isLoggedIn()) {
       const request = req.clone({
           headers: new HttpHeaders({
+            'Content-Type': 'application/json',
               'Authorization': "Bearer "+this.tokenStorageService.getToken()
+              // 'Authorization': "Bearer "+ "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJleHAiOjE2NzgwNTI1MTQsImlhdCI6MTY3ODAzNDUxNH0.EMhefdZ5jFeHz6EN-J3J0AF0A5aAh4mJrFIEXBPazGiTbfPnu6mrPC8DUtgjlhxLAev11N7NZXPkl9ywvdGoIA"
           })
       });
       return next.handle(request).pipe(
