@@ -29,7 +29,7 @@ export class AcademicSummaryService {
 
   getAll(): Observable<any> {
   
-    return this.httpClient.get(this.url + '/academic-summary')
+    return this.httpClient.get(this.url + '/academic-summary', this.httpOptions)
   
     .pipe(
       catchError(this.errorHandler)
@@ -38,7 +38,7 @@ export class AcademicSummaryService {
 
   find(id:number): Observable<any> {
   
-    return this.httpClient.get(this.url + '/academic-summary/' + id)
+    return this.httpClient.get(this.url + '/academic-summary/' + id, this.httpOptions)
   
     .pipe(
       catchError(this.errorHandler)
